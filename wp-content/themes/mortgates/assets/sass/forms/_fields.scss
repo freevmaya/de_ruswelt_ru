@@ -1,0 +1,78 @@
+input,
+select,
+textarea {
+	padding: $input__indents_y $input__indents_x;
+	border: 1px solid transparent;
+	font-size: $input__font-size;
+	line-height: $input__line-height;
+	transition: .3s;
+	border-radius: 5px;
+	font-weight: 400;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
+textarea {
+	appearance: none;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'] {
+	hyphens: none;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+	display: inline-block;
+	width: auto;
+	vertical-align: middle;
+}
+
+input[type='file'] {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+}
+
+select {
+	width: 100%;
+	max-width: 100%;
+}
+
+textarea {
+	$height: 160px;
+
+	height: $height;
+	min-height: $height;
+	width: 100%;
+
+	@include resizable(vertical);
+}
+
+/* Input Placeholders */
+::-webkit-input-placeholder { transition: .1s; color: inherit; }
+::-moz-placeholder          { transition: .1s; color: inherit; }
+:-ms-input-placeholder      { transition: .1s; color: inherit; }
+:-moz-placeholder           { transition: .1s; color: inherit; }
+
+::-moz-placeholder { opacity: 1 }
+:-moz-placeholder  { opacity: 1 }
+
+form input[type="button"],
+form input[type="submit"] {
+	border: none;
+}

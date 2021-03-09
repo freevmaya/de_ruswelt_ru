@@ -1,0 +1,150 @@
+/* #Sticky label */
+.sticky__label {
+	background-color: $regular_accent_color_1;
+	color: $invert_accent_color_1;
+}
+
+/* #Search Result */
+.posts-list--search .posts-list__item + .posts-list__item {
+	border-color: @darken($grey_color_1, 5.5);
+}
+
+/* #Post */
+.posts-list--default .format-standard.no-thumb .posts-list__item-content,
+.posts-list--default .format-image .post-featured-content:empty + .posts-list__item-content,
+.posts-list--default .format-video .post-featured-content:empty + .posts-list__item-content,
+
+.format-quote .posts-list__item-content,
+.format-audio .posts-list__item-content,
+.format-link .posts-list__item-content,
+
+.posts-list--grid .posts-list__item-content,
+.posts-list--masonry .posts-list__item-content,
+.posts-list--vertical-justify .posts-list__item-content,
+
+.related-post,
+.post-author-bio,
+
+.single-post .format-link .post-featured-content,
+.single-post .format-quote .post-featured-content {
+	background-color: $grey_color_1;
+}
+
+/* #Entry Meta */
+.entry-meta {
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-size: $meta_font_size{px};
+	line-height: $meta_line_height;
+	font-family: @font_family( $meta_font_family );
+	letter-spacing: $meta_letter_spacing{em};
+	text-transform: $meta_text_transform;
+	color: $regular_link_color;
+}
+
+.invert .entry-meta {
+	color: $invert_link_color;
+}
+
+.posts-list:not(.posts-list--default):not(.related-posts) .posted-by,
+.posts-list:not(.posts-list--default):not(.related-posts) .posted-by a:not(:hover){
+	color: $regular_text_color;
+}
+
+.post__tags a {
+	border-color: $grey_color_1;
+}
+
+.post__tags a:hover {
+	color: $invert_text_color;
+	border-color: $regular_accent_color_2;
+	background-color: $regular_accent_color_2;
+}
+
+.invert .post__tags a:hover {
+	color: $regular_text_color;
+	border-color: $invert_text_color;
+	background-color: $invert_text_color;
+}
+
+.posts-list--default .format-standard.no-thumb .posts-list__item-content .post__tags a:not(:hover),
+.posts-list--default .format-image .post-featured-content:empty + .posts-list__item-content .post__tags a:not(:hover),
+.posts-list--default .format-video .post-featured-content:empty + .posts-list__item-content .post__tags a:not(:hover),
+.posts-list--default .format-quote .posts-list__item-content .post__tags a:not(:hover),
+.posts-list--default .format-audio .posts-list__item-content .post__tags a:not(:hover),
+.posts-list--default .format-link .posts-list__item-content .post__tags a:not(:hover) {
+	border-color: @darken($grey_color_1, 13);
+}
+
+.posts-list:not(.posts-list--default) .post__tags a,
+.related-post .post__tags a {
+	background-color: @alpha($regular_accent_color_2, 20);
+	color: $invert_accent_color_1;
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-family: @font_family( $meta_font_family );
+}
+
+.posts-list:not(.posts-list--default) .format-standard.no-thumb .post__tags a:not(:hover),
+.posts-list:not(.posts-list--default) .format-video .post-featured-content:empty + .posts-list__item-content .post__tags a:not(:hover),
+.posts-list:not(.posts-list--default) .format-image .post-featured-content:empty + .posts-list__item-content .post__tags a:not(:hover),
+.posts-list:not(.posts-list--default) .format-gallery .post-featured-content:empty + .posts-list__item-content .post__tags a:not(:hover),
+.posts-list:not(.posts-list--default) .format-quote .post__tags a:not(:hover),
+.posts-list:not(.posts-list--default) .format-audio .post__tags a:not(:hover),
+.posts-list:not(.posts-list--default) .format-link .post__tags a:not(:hover),
+.related-post.no-thumb .post__tags a:not(:hover) {
+	background-color: @alpha($regular_accent_color_2, 40);
+}
+
+.posts-list:not(.posts-list--default) .post__tags a:hover,
+.related-post .post__tags a:hover {
+	background-color: @alpha($regular_accent_color_2, 70);
+}
+
+/* #Post Format */
+.post-format-link {
+	font-style: $h3_font_style;
+	font-weight: $h3_font_weight;
+	font-size: @font_size($h3_font_size, multiple, round, $h3_mobile_multiple)px;
+	line-height: $h3_line_height;
+	font-family: @font_family( $h3_font_family );
+	letter-spacing: $h3_letter_spacing{em};
+	text-transform: $h3_text_transform;
+	color: $regular_h3_color;
+}
+
+@media (min-width: 1200px) {
+	.post-format-link { font-size: $h3_font_size{px}; }
+}
+
+/* #Related Posts */
+.related-posts .entry-title {
+	font-size: @font_size($h4_font_size, multiple, round, 0.9)px;
+}
+
+/* #Comments */
+.comment-list .comment:before, 
+.comment-list .pingback:before {
+	background-color: @darken($grey_color_1, 26);
+}
+
+.comment-reply-link {
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-family: @font_family( $meta_font_family );
+}
+
+.comment-list .comment-metadata {
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-size: $meta_font_size{px};
+	line-height: $meta_line_height;
+	font-family: @font_family( $meta_font_family );
+	letter-spacing: $meta_letter_spacing{em};
+	text-transform: $meta_text_transform;
+	color: $regular_link_color;
+}
+
+#cancel-comment-reply-link {
+	line-height: calc($h5_line_height * $h5_font_size{px});
+}

@@ -1,0 +1,10 @@
+/* #Contact-information*/
+.contact-information-widget__inner {
+	font-family: @font_family( $h1_font_family );
+}
+.contact-information-widget .icon {
+	color: $grey_color_1;
+}
+.invert .contact-information-widget .icon {
+	color: @darken($grey_color_3, 7.5);
+}

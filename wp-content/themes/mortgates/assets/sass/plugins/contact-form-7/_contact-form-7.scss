@@ -1,0 +1,89 @@
+.wpcf7 {
+	& &-form-control-wrap {
+		position: relative;
+		display: block;
+		input {
+			width: 100%;
+		}
+	}
+
+	& &-not-valid {
+		border-bottom-color:$color__not-valid!important;
+	}
+
+	& &-not-valid-tip {
+		color:$color__not-valid!important;
+		font-size: 12px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	& &-response-output {
+		font-size: 14px;
+		margin: 1em 0;
+	}
+
+	& &-validation-errors,
+	& &-mail-sent-ng,
+	& &-mail-sent-ok {
+		padding: 0;
+		border: none;
+	}
+
+	& &-validation-errors,
+	& &-mail-sent-ng {
+		color: $color__not-valid!important;
+	}
+
+	& &-mail-sent-ok {
+		color: $color__valid!important;
+	}
+
+	input[type="submit"],
+	input[type="reset"],
+	button {
+		vertical-align: middle;
+	}
+
+	& &-form .ajax-loader {
+		margin: 0 10px;
+		background-image: url(assets/images/loader.gif);
+	}
+
+	&-form {
+		p {
+			margin-bottom: 25px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	input[type='radio'],
+	input[type='checkbox'] {
+		width: auto;
+	}
+
+	input[type='text'],
+	input[type='email'],
+	input[type='url'],
+	input[type='password'],
+	input[type='search'],
+	input[type='tel'],
+	textarea {
+		border: none;
+		border-bottom: 1px solid;
+		background-color: transparent;
+		padding: 15px 0 3px;
+		font-size: 18px;
+	}
+
+	textarea {
+		$height: 90px;
+
+		height: $height;
+		min-height: $height;
+	}
+}

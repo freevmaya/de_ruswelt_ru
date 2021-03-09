@@ -1,0 +1,151 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background-color: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+	vertical-align: top;
+}
+
+q {
+	quotes: none;
+
+	&:before,
+	&:after {
+		content: none;
+	}
+}
+
+blockquote {
+	$indent: 60px;
+
+	font-size: 24px;
+	line-height: 1.5;
+	position: relative;
+	padding-left: $indent;
+	margin: 35px 0;
+	clear: left;
+
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:before {
+		content: '\0022';
+		position: absolute;
+		top: -10px;
+		left: -10px;
+		display: block;
+		font-size: 112px;
+		line-height: 1;
+		font-style: italic;
+	}
+
+	cite {
+		display: block;
+		margin-top: 15px;
+		margin-left: - $indent;
+		padding-left: $indent;
+		position: relative;
+		&:before {
+			content: '';
+			width: 35px;
+			height: 1px;
+			margin-right: 25px;
+			vertical-align: middle;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+		}
+	}
+}
+
+hr,
+.elementor hr {
+	border: 0;
+	height: 1px;
+	margin: 20px 0;
+	clear: both;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	h1 + &,
+	h2 + &,
+	h3 + &,
+	h4 + &,
+	h5 + &,
+	h6 + & {
+		max-width: 65px;
+		margin-bottom: 40px;
+	}
+	h1[style*="text-align: center;"] + &,
+	h2[style*="text-align: center;"] + &,
+	h3[style="text-align: center;"] + &,
+	h4[style*="text-align: center;"] + &,
+	h5[style*="text-align: center;"] + &,
+	h6[style*="text-align: center;"] + & {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	h1[style*="text-align: right;"] + &,
+	h2[style*="text-align: right;"] + &,
+	h3[style="text-align: right;"] + &,
+	h4[style*="text-align: right;"] + &,
+	h5[style*="text-align: right;"] + &,
+	h6[style*="text-align: right;"] + & {
+		margin-left: auto;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+## Lists
+--------------------------------------------------------------*/
+@import "lists"; // +
+
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
+@import "tables"; // +
+
+/*--------------------------------------------------------------
+## Preloader
+--------------------------------------------------------------*/
+@import "page-preloader"; // +
+
+/*--------------------------------------------------------------
+## ToTop button
+--------------------------------------------------------------*/
+@import "totop-button"; // +
+
+
+@media (max-width: 1279px) {
+	.elementor-reverse-tablet > .elementor-container > .elementor-row {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-webkit-flex-direction: column-reverse;
+		-ms-flex-direction: column-reverse;
+		flex-direction: column-reverse;
+	}
+}

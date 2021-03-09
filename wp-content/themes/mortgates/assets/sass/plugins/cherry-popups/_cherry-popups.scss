@@ -1,0 +1,185 @@
+.cherry-popup {
+
+	.popup-type-login &-title,
+	.popup-type-signup &-title{
+		h4 {
+			font-size: 20px;
+			line-height: 1.33;
+		}
+	}
+
+	.popup-type-login &-login__login-in,
+	.popup-type-signup &-register__sign-up,
+	.popup-type-subscribe &-subscribe__submit,
+	.popup-type-default &-subscribe__submit {
+		@include btn;
+		display: flex;
+		align-items: center;
+	}
+
+	.popup-type-login &-login__login-in,
+	.popup-type-signup &-register__sign-up {
+		width: 100%;
+	}
+
+	&-login__signup-message {
+		font-size: 14px;
+		margin-top: 5px;
+	}
+
+	.popup-type-signup .cherry-popup-register &-signup__login-user {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		font-size: 16px;
+	}
+
+	&-spinner {
+		width: 19px;
+		height: 19px;
+		top: -1px;
+	}
+
+	&-login__remember {
+		margin-bottom: 10px;
+	}
+
+	&-login__signup-message {
+		flex-wrap: wrap;
+	}
+
+	.popup-type-login &-login__message,
+	.popup-type-signup &-register__message {
+		position: absolute;
+		left: 30px;
+		right: 30px;
+		bottom: 10px;
+		padding: 5px;
+		margin: 0;
+		line-height: 1;
+		span {
+			font-size: 14px;
+			line-height: 1.1;
+		}
+	}
+
+	&-login__use-mail,
+	&-signup__new-user {
+		.cherry-popup.cherry-popup-wrapper & {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 16px;
+
+			span {
+				margin: 0;
+			}
+
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	&-login__use-mail {
+		.cherry-popup.cherry-popup-wrapper & {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+
+	&-login__input-group .cherry-popup-login__wrap,
+	&-register__input-group .cherry-popup-register__wrap {
+		margin: 5px 0;
+	}
+
+	&-close-button {
+		.cherry-popup-wrapper & {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 36px;
+			height: 36px;
+			@include media-breakpoint-up(md) {
+				left: calc(100% + 6px);
+				bottom: calc(100% + 4px);
+				top: auto;
+				right: auto;
+			}
+			span {
+				margin-right: 1px;
+				width: 36px;
+				height: 36px;
+				line-height: 36px;
+				font-size: 22px;
+				border-radius: 50%;
+				transition: 100ms all ease;
+			}
+		}
+	}
+	&-check {
+		.popup-type-default & {
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+		}
+		.cherry-popup-wrapper & {
+			.marker {
+				margin-right: 10px;
+				border: 1px solid;
+				span {
+					font-size: 20px;
+				}
+			}
+			.label {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.wp-social-login-widget {
+		.wp-social-login-provider-list {
+			display: block;
+			padding: 0;
+			.wp-social-login-provider {
+				width: 100%;
+				margin: 0;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				font-size: 12px;
+				text-transform: uppercase;
+				text-align: center;
+				border-radius: 0;
+
+				&:before {
+					vertical-align: text-bottom;
+				}
+				& + .wp-social-login-provider {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+.comments-area .wp-social-login-provider-list {
+	padding: 10px 0;
+	a {
+		font-weight: 600;
+		&::after {
+			content: "";
+			position: relative;
+			display: inline-block;
+			border-radius: 50%;
+			width: 4px;
+			height: 4px;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 3px;
+		}
+		&:last-child {
+			&::after {
+				content: none;
+			}
+		}
+	}
+}

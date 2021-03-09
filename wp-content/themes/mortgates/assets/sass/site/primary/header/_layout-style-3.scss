@@ -1,0 +1,20 @@
+.site-header.style-3 {
+
+	.header-btn-wrapper {
+		order: 2;
+	}
+
+	.header-nav-wrapper {
+		@include media-breakpoint-up(md) {
+			margin-top: 10px;
+		}
+	}
+
+	.main-navigation {
+		@include media-breakpoint-up(xl) {
+			.jet-menu {
+				justify-content: flex-start !important;
+			}
+		}
+	}
+}

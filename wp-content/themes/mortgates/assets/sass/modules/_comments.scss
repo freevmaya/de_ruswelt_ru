@@ -1,0 +1,128 @@
+.comments {
+	&-area {
+		position: relative;
+		margin-top: 50px;
+
+		.related-posts + & {
+			margin-top: 20px;
+		}
+
+		.elementor-page.position-fullwidth & {
+			margin-bottom: 50px;
+		}
+	}
+	&-title {
+		margin-bottom: 35px;
+	}
+}
+
+.comment {
+	&-list {
+		list-style: none;
+		overflow: hidden;
+		margin-left: 0;
+		margin-bottom: 0;
+
+		.comment,
+		.pingback {
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				height: 1px;
+				width: 999em;
+				top: 0;
+				right: 0;
+				opacity: 0.3;
+			}
+
+			& + .comment,
+			& + .pingback,
+			.children .comment,
+			.children .pingback {
+				padding-top: 30px;
+				margin-top: 30px;
+			}
+		}
+
+		.children {
+			margin-left: 0;
+			padding-left: 10px;
+			list-style: none;
+			@include media-breakpoint-up(md) {
+				padding-left: 30px;
+			}
+		}
+
+		.parent.depth-1 > .children,
+		.parent.depth-2 > .children {
+			@include media-breakpoint-up(xl) {
+				padding-left: 80px;
+			}
+		}
+
+		> .comment,
+		> .pingback {
+
+			&:first-child {
+				&:before { content: none }
+			}
+		}
+	}
+	&-body {
+		&__holder {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.avatar {
+			margin-right: 15px;
+			border-radius: 50%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+
+			@include media-breakpoint-down(sm) {
+				width: 40px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				margin-right: 30px;
+			}
+		}
+		.fn {}
+
+		.reply {
+			font-size: 10px;
+			text-transform: uppercase;
+
+			i { margin-right: 5px; }
+		}
+	}
+
+	&-meta {
+		display: flex;
+		@include grid-indent(10px);
+		justify-content: space-between;
+	}
+
+	&-content-wrap {
+		flex: 1 1 200px;
+		max-width: 100%;
+	}
+	&-author {
+		flex-shrink: 0;
+	}
+	&-content {
+		margin-top: 10px;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+	&-date {
+		display: block;
+		&__link{}
+	}
+}
+
+.bypostauthor {
+	display: block;
+}

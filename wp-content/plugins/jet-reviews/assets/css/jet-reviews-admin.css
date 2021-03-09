@@ -1,0 +1,12 @@
+#jet-review-items .cheryr-ui-repeater-content-box .cx-ui-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+#jet-review-items .cheryr-ui-repeater-content-box .cx-label {
+	width: 15%;
+	display: block;
+}
+#jet-review-items .cheryr-ui-repeater-content-box input {
+	flex: 1 1 auto;
+}

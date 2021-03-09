@@ -1,0 +1,11 @@
+.elementor-counter-title {
+	margin-top: 3px;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		width: 70px;
+		height: 3px;
+		transform: translateX(-50%);
+	}
+}

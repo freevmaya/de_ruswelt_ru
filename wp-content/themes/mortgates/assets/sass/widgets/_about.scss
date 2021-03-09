@@ -1,0 +1,23 @@
+.widget-about {
+
+	&__logo-img {}
+
+	&__content {
+		margin-top: 30px;
+	}
+	&__tagline {
+		font-size: 12px;
+		margin-top: 5px;
+	}
+
+	&__content,
+	&__tagline {
+		&:empty {
+			margin-top: 0;
+		}
+	}
+
+	&__social {
+		margin-top: 35px;
+	}
+}

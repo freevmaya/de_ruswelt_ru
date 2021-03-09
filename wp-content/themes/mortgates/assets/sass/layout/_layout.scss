@@ -1,0 +1,55 @@
+.site {
+
+	hyphens: manual;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	body.wordwrap & {
+		@include hyphens(auto);
+	}
+
+	&.container,
+	&.container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&-header,
+	&-content,
+	&-footer {
+		width: 100%;
+	}
+
+	&-content {
+		flex: auto;
+		min-height: 1px;
+	}
+
+	&-main {}
+
+	&-content_wrap {
+		margin-top: $site-content-top-indent;
+		margin-bottom: $site-content-bottom-indent;
+
+		.blog &,
+		.search.search-results & {
+			margin-bottom: 95px;
+		}
+
+		.error404 &,
+		.search.search-no-results & {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.position-fullwidth.elementor-page:not(.single-team):not(.single-projects) & {
+			margin-top: 0;
+		}
+
+		.position-fullwidth.elementor-page & {
+			margin-bottom: 0;
+		}
+	}
+}

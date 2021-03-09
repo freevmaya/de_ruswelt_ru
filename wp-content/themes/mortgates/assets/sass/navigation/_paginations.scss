@@ -1,0 +1,138 @@
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	overflow: hidden;
+	border-top: 1px solid;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+	.nav-previous,
+	.nav-next {
+		width: 100%;
+		@include media-breakpoint-up(sm) {
+			width: 50%;
+		}
+		> a {
+			position: relative;
+			display: inline-block;
+
+			&:before {
+				@extend %iconsmind;
+				position: absolute;
+				font-size: 40px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.nav-previous {
+		float: left;
+		padding-right: 15px;
+		a{
+			padding-left: 60px;
+			&:before {
+				content: '\ecf7';
+				left: 0;
+			}
+		}
+	}
+	.nav-next {
+		float: right;
+		text-align: right;
+		padding-left: 15px;
+		margin-top: 25px;
+		@include media-breakpoint-up(sm) {
+			margin-top: 0;
+		}
+		a {
+			padding-right: 60px;
+			&:before {
+				content: '\eeb5';
+				right: 0;
+			}
+		}
+	}
+}
+
+.comment-navigation {
+	border-bottom: 1px solid;
+	margin-bottom: 25px;
+}
+
+.posts-navigation,
+.post-navigation {
+	margin-top: 50px;
+	.comments-area + & {
+		@include media-breakpoint-up(xl) {
+			margin-top: 100px;
+		}
+	}
+
+	.elementor-page.content-layout-fullwidth & {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/*Post pagination - Page links*/
+.pagination {
+	margin-top: 45px;
+	text-align: left;
+
+	.nav-links {
+		font-size: 0;
+	}
+}
+
+.site-content .page-links {
+	clear: both;
+	margin: 0 0 1em;
+	&__title {
+		margin-right: 5px;
+	}
+}
+
+.nav-links .page-numbers,
+.site-content .page-links a,
+.site-content .page-links > .page-links__item,
+.tm-pg_front_gallery-navigation .tm_pg_nav-links a.tm_pg_page-numbers {
+	line-height: 39px;
+	display: inline-block;
+	min-width: 39px;
+	height: 39px;
+	padding: 0 2px;
+	text-align: center;
+	text-decoration: none;
+	transition: .1s;
+	margin: 0 4px 4px 0;
+	border: none;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+.nav-links .page-numbers,
+.tm-pg_front_gallery-navigation .tm_pg_nav-links a.tm_pg_page-numbers {
+	&.next,
+	&.prev {
+		i {
+			font-size: 10px;
+		}
+	}
+}
+
+.swiper {
+	&-pagination-bullets &-pagination-bullet {
+		&,
+		.elementor & {
+			background-color: currentColor;
+			opacity: 0.3;
+			border: none;
+
+			&:hover,
+			&-active {
+				opacity: 1;
+			}
+		}
+	}
+}

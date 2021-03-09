@@ -1,0 +1,354 @@
+.widget {
+	ul {
+		margin-bottom: 0;
+		padding: 0;
+		margin-left: 0;
+		list-style: none;
+
+		li {
+			& + li,
+			> ul,
+			> ol {
+				margin-top: 15px;
+			}
+		}
+
+		li > ul,
+		li > ol {
+			margin-left: 20px;
+		}
+	}
+
+	.footer-area & {
+		ul {
+			li {
+				& + li,
+				> ul,
+				> ol {
+					margin-top: 25px;
+				}
+			}
+		}
+
+		&.widget_nav_menu {
+			ul {
+				li {
+					& + li,
+					> ul,
+					> ol {
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.widget_archive,
+.widget_categories,
+.widget-area:not(.footer-area) .widget_nav_menu div,
+.elementor-widget-sidebar .widget_nav_menu div,
+.widget_meta,
+.widget_pages {
+
+	ul {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	> ul {
+
+		> li {
+
+			> a {
+				position: relative;
+				text-transform: uppercase;
+				padding-left: 20px;
+
+				&::before {
+					content: '';
+					height: 5px;
+					width: 5px;
+					border-radius: 50%;
+					position: absolute;
+					top: 6px;
+					left: 0;
+					@include transition(.1s ease all);
+				}
+
+				&:hover {
+					&::before {
+						background-color: currentColor;
+					}
+				}
+			}
+
+			& + li {
+				padding-top: 20px;
+				margin-top: 20px;
+				border-top: 1px solid;
+			}
+
+			> ul {
+				@include media-breakpoint-up(xl) {
+					margin-left: 40px;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Widget Calendar
+--------------------------------------------------------------*/
+.widget_calendar {
+	caption,
+	thead,
+	tbody {
+		font-weight: 700;
+	}
+
+	caption,
+	tbody {
+		font-size: 12px;
+	}
+
+	font-weight: 700;
+	font-size: 12px;
+	text-align: center;
+	
+	table {
+		margin-bottom: 0;
+		table-layout: fixed;
+		width: 100%;
+		position: relative;
+
+		th,
+		td,
+		thead th,
+		tbody + tbody {
+			border: none;
+		}
+	}
+
+	thead {
+		font-size: 10px;
+	}
+	caption {
+		padding: 15px 0 9px;
+		text-transform: uppercase;
+	}
+	th {
+		padding: 12px 5px;
+	}
+
+	tbody td {
+
+		&,
+		a {
+			line-height: 55px;
+			height: 55px;
+		}
+
+		a {
+			display: inline-block;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+	tfoot td {
+		position: absolute;
+		top: 15px;
+		a {
+			font-size: 0;
+			&:before {
+				content: '\f053';
+				@extend %font-awesome-icon;
+				font-size: 10px;
+				transition: .1s;
+			}
+		}
+		&#prev {
+			left: 20px;
+			a:before {
+				content: '\f053';
+			}
+		}
+		&#next {
+			right: 20px;
+			a:before {
+				content: '\f054';
+			}
+		}
+
+	}
+	td#today {}
+
+	#next {
+		text-align: right;
+	}
+}
+
+/*--------------------------------------------------------------
+## Widget Tag Cloud
+--------------------------------------------------------------*/
+.tagcloud {
+	margin: 0 0 -5px;
+	a {
+		@extend %tags-style;
+	}
+}
+
+/*--------------------------------------------------------------
+## Widget Recent Posts
+--------------------------------------------------------------*/
+.widget_recent_entries {
+	font-size: 16px;
+	.footer-area:not(.footer-area--fullwidth) & {
+		font-size: inherit;
+	}
+	.post-date {
+		display: block;
+	}
+}
+
+/*--------------------------------------------------------------
+## Widget Recent Comments
+--------------------------------------------------------------*/
+.widget_recent_comments {
+	font-size: 16px;
+	.footer-area:not(.footer-area--fullwidth) & {
+		font-size: inherit;
+	}
+	.comment-author-link {
+		margin-right: 1px;
+
+		& ~ a {
+			&:before {
+				content: '';
+				display: block;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Widget RSS
+--------------------------------------------------------------*/
+.rss-widget-icon {
+	vertical-align: baseline;
+}
+
+.widget_rss {
+
+	font-size: 16px;
+	.footer-area:not(.footer-area--fullwidth) & {
+		font-size: inherit;
+	}
+
+	a.rsswidget {
+		line-height: 1.125;
+	}
+
+	.rss-date {
+		display: block;
+	}
+
+	.rss-date,
+	.rssSummary,
+	cite {
+		margin-top: 5px;
+	}
+}
+
+/*--------------------------------------------------------------
+## Widget Archives - Categories
+--------------------------------------------------------------*/
+.widget_archive,
+.widget_categories {
+	position: relative;
+	select {
+		width: 100%;
+		appearance: none;
+		position: relative;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&::-ms-expand {
+			opacity: 0;
+		}
+	}
+
+	&[class*="col-"] {
+		label {
+			width: calc(100% - #{$grid-gutter-width});
+		}
+	}
+
+	label {
+		position: relative;
+		width: 100%;
+		height: 56px;
+
+		.footer-area & {
+			width: calc(100% - #{$grid-gutter-width});
+		}
+
+		&:before {
+			@extend %font-awesome-icon;
+			content: "\f107";
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: inline-block;
+			z-index: 1;
+			font-size: 24px;
+			pointer-events: none;
+		}
+	}
+	.screen-reader-text {
+		clip: auto;
+		font-size: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## Monster Widget Compatibility
+--------------------------------------------------------------*/
+
+[id*="monster-widget-placeholder"].widget {
+	.footer-area > & {
+		position: relative;
+		min-height: 1px;
+		padding-left: ($grid-gutter-width / 2);
+		padding-right: ($grid-gutter-width / 2);
+		float: none;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	.footer-area--4-cols > &,
+	.footer-area--2-cols > & {
+		@include media-breakpoint-up(md) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	.footer-area--4-cols > & {
+		@include media-breakpoint-up(lg) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	.footer-area--3-cols > & {
+		@include media-breakpoint-up(md) {
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.cherry-trend-post__content-wrapper {
+	background-color: $grey_color_1;
+}
+
+.invert .cherry-trend-post__content-wrapper {
+	background-color: @darken($grey_color_1, 80);
+}
+
+.cherry-trend-post__meta-tags a {
+	background-color: @alpha($regular_accent_color_2, 40);
+	color: $invert_accent_color_1;
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-family: @font_family( $meta_font_family );
+}
+
+.cherry-trend-post__meta-tags a:hover {
+	background-color: @alpha($regular_accent_color_2, 70);
+}
+
+.cherry-trend-post__title {
+	font-size: @font_size($h4_font_size, multiple, round, 0.9)px;
+}

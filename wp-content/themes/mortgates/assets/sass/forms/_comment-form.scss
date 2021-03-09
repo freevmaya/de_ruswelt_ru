@@ -1,0 +1,54 @@
+.comment {
+	&-respond {
+		.comment-list + & {
+			margin-top: 80px;
+		}
+		.comment-list & {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+	&-reply-title {
+		#cancel-comment-reply-link {
+			font-size: 12px;
+			float: right;
+			margin-left: 10px;
+		}
+	}
+	&-form {
+		@include grid-indent(2.5px);
+		display: flex;
+		flex-wrap: wrap;
+
+		> * {
+			width: 100%;
+		}
+
+		&-comment,
+		&-author,
+		&-email,
+		&-url {
+			position: relative;
+			margin: 0 0 5px 0;
+		}
+
+		&-author,
+		&-email {
+			@include media-breakpoint-up(xl) {
+				width: 50%;
+
+				.comment-list & {
+					width: 100%;
+				}
+			}
+		}
+		&__field {
+			width: 100%;
+			vertical-align: top;
+		}
+		.form-submit {
+			margin: 30px 0 0 0;
+		}
+
+	}
+}

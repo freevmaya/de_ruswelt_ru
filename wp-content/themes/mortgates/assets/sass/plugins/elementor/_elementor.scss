@@ -1,0 +1,907 @@
+/*-------------------------------------------------------------
+### Elementor Editor
+--------------------------------------------------------------*/
+.elementor-editor-active .elementor.elementor-edit-mode .elementor-element>.elementor-element-overlay {
+	z-index: 10;
+}
+
+/*-------------------------------------------------------------
+### Elementor Grid
+--------------------------------------------------------------*/
+.elementor-page {
+	&.content-layout-fullwidth {
+		.site-main .elementor-inner {
+			margin-left: $grid-gutter-width / -2;
+			margin-right: $grid-gutter-width / -2;
+
+			.elementor-inner {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.content-layout-fullwidth.position-one-right-sidebar {
+		.site-main .elementor-inner {
+			@include media-breakpoint-up(lg) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.content-layout-fullwidth.position-one-left-sidebar {
+		.site-main .elementor-inner {
+			@include media-breakpoint-up(lg) {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+$elementor-grid-gap-width: (
+	narrow:   $grid-gutter-width / 3,   // 10px
+	default:  $grid-gutter-width / 2,   // 15px
+	extended: $grid-gutter-width / 1.5, // 20px
+	wide:     $grid-gutter-width / 1.2, // 25px
+	wider:    $grid-gutter-width / 1,   // 30px
+);
+
+.elementor {
+	.elementor-section .elementor-container {
+		display: block;
+	}
+
+	.elementor-row {
+		width: auto;
+	}
+}
+
+@each $type, $gap in $elementor-grid-gap-width {
+	.elementor-column-gap-#{$type} {
+		&.elementor-container {
+
+			padding-left: $gap;
+			padding-right: $gap;
+
+			.elementor-container,
+			.content-layout-boxed .site-main &,
+			.sidebar & {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		> .elementor-row {
+			margin-left: - $gap;
+			margin-right: - $gap;
+
+			> .elementor-column {
+				padding: 0 $gap;
+
+				&:not(.elementor-column-custom-padding) {
+					> .elementor-element-populated {
+						padding: $gap 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Extra CSS Class
+--------------------------------------------------------------*/
+.inline-block {
+	display: inline-block;
+}
+
+.inline-block-md {
+	@media ( min-width: 768px ) {
+		display: inline-block;
+	}
+}
+
+.inline-block-lg {
+	@media ( min-width: 1025px ) {
+		display: inline-block;
+	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.elementor-section.elementor-container-md-align-right > .elementor-container{
+	@media ( min-width: 768px ) {
+		margin-right: 0;
+	}
+}
+
+.elementor-section.elementor-container-lg-align-right > .elementor-container{
+	@media ( min-width: 1025px ) {
+		margin-right: 0;
+	}
+}
+
+.elementor-section.elementor-container-md-align-left > .elementor-container{
+	@media ( min-width: 768px ) {
+		margin-left: 0;
+	}
+}
+
+.elementor-section.elementor-container-lg-align-left > .elementor-container{
+	@media ( min-width: 1025px ) {
+		margin-left: 0;
+	}
+}
+
+/*-------------------------------------------------------------
+### Accordion
+--------------------------------------------------------------*/
+.elementor-accordion{
+
+	& &-item {
+		border-left: none;
+		border-right: none;
+	}
+
+	.elementor-tab-title {
+		transition: .1s;
+
+		&:focus {
+			outline: 0;
+		}
+
+		&.elementor-active {
+			background-color: transparent;
+		}
+	}
+
+	& .elementor-tab-title {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	& .elementor-tab-title &-icon i.fa {
+		font-family: inherit;
+
+		&:before {
+			content: '+';
+			color: currentColor;
+		}
+	}
+
+	& .elementor-tab-title.elementor-active &-icon i.fa {
+		&:before {
+			content: '‒';
+		}
+	}
+
+	&-content {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	& &-content {
+		border-top: none;
+		padding-top: 5px;
+		padding-bottom: 20px;
+	}
+
+	& .elementor-tab-title,
+	& .elementor-tab-content {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.elementor-tab-content {
+		.position-fullwidth .elementor-col-100 &,
+		.position-fullwidth [data-col="100"] & { // for editor
+			@include media-breakpoint-up(xl) {
+				column-count: 2;
+				column-gap: $grid-gutter-width;
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Button
+--------------------------------------------------------------*/
+$btn-special-color: (
+	info:    #5BC0DE,
+	success: #5CB85C,
+	warning: #F0AD4E,
+	danger:  #D9534F
+);
+
+@each $type, $color in $btn-special-color {
+	.elementor-element.elementor-button-#{$type} .elementor-button {
+		background-color: $color;
+		border-color: $color;
+
+		&:hover {
+			background-color: darken($color, 10);
+			border-color: darken($color, 10);
+		}
+	}
+}
+
+.elementor-widget {
+	.elementor-button {
+		&,
+		&:hover,
+		&:focus,
+		&:visited {
+			opacity: 1;
+		}
+
+		&-content-wrapper {
+			display: inline-block;
+		}
+
+		&-icon {
+			font-size: 1.5em;
+			line-height: 1;
+		}
+
+		@include btn();
+		border-style: none;
+
+		&.elementor-size-sm,
+		&.elementor-size-md {
+			font-size: 12px;
+		}
+
+		&.elementor-size-xs,
+		&.elementor-size-md,
+		&.elementor-size-lg,
+		&.elementor-size-xl {
+			@include border-radius();
+		}
+
+		&.elementor-size-xs {
+			@extend %btn-xs;
+		}
+
+		&.elementor-size-sm {
+			@extend %btn-sm;
+		}
+
+		&.elementor-size-md {
+			padding: $button__indents_y $button__indents_x;
+		}
+
+		&.elementor-size-lg {
+			font-size: 16px;
+			padding: $button__indents_y $button__indents_x;
+		}
+
+		&.elementor-size-xl {
+			font-size: 18px;
+			padding: $button__indents_y*1.2 $button__indents_x*1.2;
+		}
+	}
+}
+
+.elementor-button-fullwidth .elementor-button {
+	width: 100%;
+}
+
+/*-------------------------------------------------------------
+### Counter
+--------------------------------------------------------------*/
+.elementor-counter {
+	& &-number-wrapper {
+		font-size: 48px;
+	}
+
+	& &-title {
+		margin-top: 5px;
+	}
+}
+
+/*-------------------------------------------------------------
+### Divider
+--------------------------------------------------------------*/
+.elementor-divider-separator {
+	max-width: 100%;
+}
+
+/*-------------------------------------------------------------
+### Heading
+--------------------------------------------------------------*/
+.elementor-widget-heading {
+
+	&:not(:last-child){
+		h6.elementor-heading-title {
+			margin-bottom: -5px;
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Icon - Icon Box
+--------------------------------------------------------------*/
+.elementor {
+	&-icon-box-title {
+		margin-bottom: 15px;
+		letter-spacing: 1.5px;
+	}
+	&-icon-box-description {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}
+
+/*-------------------------------------------------------------
+### Progress Bar
+--------------------------------------------------------------*/
+.elementor-widget-progress {
+
+	& + .elementor-widget-progress > .elementor-widget-container{
+		margin-top: 35px;
+	}
+
+	.elementor-widget-container {
+		position: relative;
+	}
+	.elementor-title {
+		padding-right: 45px;
+		display: block;
+		margin-bottom: 15px;
+	}
+}
+
+.elementor-progress{
+	&-wrapper {
+		position: static;
+		min-height: 6px;
+		height: auto;
+		line-height: 1;
+		border-radius: 3px;
+	}
+	&-bar {
+		min-height: 6px;
+		border-radius: 3px;
+		padding: 3px 0;
+	}
+	&-text {
+		line-height: 1.2;
+	}
+	&-percentage {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding-right: 0;
+	}
+}
+
+/*-------------------------------------------------------------
+### Social Icons
+--------------------------------------------------------------*/
+.elementor-social-icon {
+	font-size: 18px;
+	padding: .45em;
+
+	i {
+		transition: .2s;
+	}
+
+	&:not(:last-child) {
+		margin-right: 10px;
+	}
+}
+
+/*-------------------------------------------------------------
+### Spacer
+--------------------------------------------------------------*/
+.elementor-widget.elementor-widget-spacer {
+	margin-bottom: 0;
+}
+
+/*-------------------------------------------------------------
+### Tabs
+--------------------------------------------------------------*/
+.elementor {
+
+	&-widget-tabs &-tabs &-tab-title,
+	&-widget-tabs &-tabs &-tabs-content-wrapper,
+	&-widget-tabs &-tabs &-tab-content{
+		border: none;
+	}
+
+	&-tabs-view-horizontal &-tabs-wrapper {
+		@include media-breakpoint-up(md) {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+		}
+	}
+
+	&-widget-tabs &-tab-title {
+		font-size: 12px;
+		text-transform: uppercase;
+		text-align: center;
+		transition: .1s;
+	}
+
+	&-widget-tabs &-tab-desktop-title {
+		padding: 23px 10px 24px;
+
+		&.elementor-active {
+			&:before,
+			&:after {
+				content: none;
+			}
+		}
+	}
+
+	&-widget-tabs &-tab-mobile-title {
+		padding: 15px 10px;
+	}
+
+	&-tabs-view-horizontal &-tab-content {
+		padding: 20px 0 10px;
+		@include media-breakpoint-up(md) {
+			padding: 21px 2px 10px;
+		}
+	}
+
+	&-tabs-view-vertical &-tab-content {
+		@include media-breakpoint-up(md) {
+			padding-top: 0;
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Text Editor
+--------------------------------------------------------------*/
+.elementor-widget-text-editor .elementor-drop-cap {
+	font-size: 3.33em;
+	font-weight: 700;
+}
+
+/*-------------------------------------------------------------
+### Testimonials
+--------------------------------------------------------------*/
+.elementor-testimonial {
+	&-wrapper &-meta &-image img {
+		width: 85px;
+		height: 85px;
+	}
+
+	&-wrapper &-job {
+		font-size: 14px;
+	}
+
+	&-wrapper &-content {
+		font-size: 1.22em;
+		line-height: 1.6;
+		font-style: italic;
+		margin-bottom: 35px;
+	}
+}
+
+/*-------------------------------------------------------------
+### Video
+--------------------------------------------------------------*/
+.elementor-widget-video {
+	.elementor-widget-container {
+		overflow: hidden;
+		@include border-radius();
+
+		iframe {
+			border-radius: 8px;
+		}
+	}
+
+	.elementor-custom-embed-image-overlay:hover {
+		.elementor-custom-embed-play{
+			&:before {
+				transform: scale(1.2) translate3d(0,0,0);
+			}
+
+			i {
+				opacity: 1;
+				text-shadow: none;
+			}
+		}
+	}
+
+	.elementor-custom-embed-play{
+		font-size: 26px;
+		line-height: 1;
+		text-align: center;
+		padding: 0.95em;
+		@include border-radius(50%);
+
+		&:before {
+			content: '';
+			display: block;
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			@include border-radius(50%);
+			transition: $bounce;
+		}
+
+		i {
+			@extend %font-awesome-icon;
+			width: 1em;
+			height: 1em;
+			opacity: 1;
+			text-shadow: none;
+			text-indent: 5px;
+
+			&:before {
+				content: '\f04b';
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Jet Elements
+--------------------------------------------------------------*/
+.jet-elements .col-row {
+	margin-left: $grid-gutter-width/-2;
+	margin-right: $grid-gutter-width/-2;
+
+	[class*="col-"] {
+		padding: $grid-gutter-width/2;
+	}
+}
+
+/*-------------------------------------------------------------
+### Advanced Carousel
+--------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------
+### Brands
+--------------------------------------------------------------*/
+.elementor-jet-brands .brands-list {
+	align-items: center;
+	&__item {
+		a {
+			img {
+				transition: all .2s;
+			}
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Circle Progress
+--------------------------------------------------------------*/
+.elementor-jet-circle-progress {
+
+	text-align: center;
+
+	.position-in-circle {
+		display: inline-flex;
+	}
+
+	.position-below-circle {
+		.circle-counter {
+			margin-top: 5px;
+		}
+	}
+
+	.circle-val {
+		line-height: 1;
+	}
+
+	.circle-counter {
+		&__title {
+			padding-top: 3px;
+		}
+
+		&__subtitle {
+			display: block;
+		}
+
+		&__title,
+		&__subtitle {
+			font-size: 12px;
+			line-height: 1.5;
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Countdown Timer
+--------------------------------------------------------------*/
+.jet-countdown-timer {
+	& &__item-label {
+		text-align: right;
+	}
+
+	& &__item-value {
+		font-size: 80px;
+		line-height: 1;
+	}
+
+	& &__item {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+}
+
+/*-------------------------------------------------------------
+### Posts
+--------------------------------------------------------------*/
+.jet-posts {
+
+	$pad_y: 35px;
+	$pad_x: 40px;
+
+	&__item {}
+
+	&__inner-box {
+		position: relative;
+		@include card;
+	}
+
+	&__inner-content {
+		padding: $pad_y $pad_x/2;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			padding: $pad_y $pad_x;
+		}
+
+		.col-tab-3 &,
+		.col-tab-4 &,
+		.col-tab-5 &,
+		.col-tab-6 & {
+			@media (min-width: 768px) and (max-width: 1024px) {
+				padding: $pad_y $pad_x/2;
+			}
+		}
+
+		.thumb-box-bg & {
+			padding: $pad_y*2 $pad_x $pad_y;
+		}
+	}
+
+	.post-thumbnail {
+		img {
+			width: 100%;
+		}
+	}
+
+	.entry-title {
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+
+	.thumb-box-bg .entry-title a {
+
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			border-bottom-color: currentColor;
+		}
+	}
+
+	.post-meta {
+		margin-top: 1px;
+		padding-bottom: 0;
+
+		&__item {
+			margin-right: 0;
+			display: inline;
+
+			&:before {
+				margin-left: 2px;
+				margin-right: 2px;
+			}
+		}
+	}
+
+	.entry-excerpt {
+		margin-top: 11px;
+		padding-bottom: 0;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	.posted-by {
+		padding-top: 15px;
+		margin-top: auto;
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	.post-badge {
+		a {
+			display: inline-block;
+			vertical-align: top;
+			@extend %tags-style-2;
+			letter-spacing: 1.3px;
+		}
+	}
+
+	.has-thumb .post-badge,
+	.thumb-box-bg .post-badge {
+		@extend %tags-style-2-position;
+	}
+}
+
+/*-------------------------------------------------------------
+### Pricing Table
+--------------------------------------------------------------*/
+@mixin big-columns {
+	.elementor-col-33 &,
+	.elementor-col-50 &,
+	.elementor-col-100 &,
+	[data-col="33"] &,
+	[data-col="50"] &,
+	[data-col="100"] & {
+		@content;
+	}
+}
+
+.elementor-jet-pricing-table {
+	.pricing-table {
+
+		@include border-radius(10px);
+		padding: 0;
+
+		&.featured-table {
+			background-color: $color__white;
+			box-shadow: $box__shadow_2;
+
+			> * {
+
+				&:first-child {
+					padding-top: 65px;
+
+					@include big-columns {
+						padding-top: 50px;
+					}
+				}
+
+				&:last-child {
+					padding-bottom: 90px;
+				}
+			}
+		}
+
+		> * {
+			padding: 15px 30px;
+
+			&:first-child {
+				padding-top: 45px;
+
+				@include big-columns {
+					padding-top: 30px;
+				}
+			}
+
+			&:last-child {
+				padding-bottom: 70px;
+			}
+		}
+
+		&__heading {
+			@include big-columns {
+				padding-bottom: 30px;
+			}
+		}
+
+		&__icon {
+			margin-bottom: 40px;
+			i:before {
+				font-size: 64px;
+
+				@include big-columns {
+					font-size: 80px;
+				}
+			}
+		}
+
+		&__title {
+			text-transform: uppercase;
+			font-size: 24px;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+
+		&__subtitle {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-top: 15px;
+
+			@include big-columns {
+				font-size: 18px;
+				line-height: 1.3;
+			}
+		}
+
+		&__price {
+			position: relative;
+
+			@include big-columns {
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
+		}
+
+		&__price-val {
+			font-size: 64px;
+			line-height: 1.2;
+			font-weight: 400;
+
+			@include big-columns {
+				font-size: 80px;
+			}
+		}
+
+		&__price-prefix,
+		&__price-suffix {
+			font-size: 30px;
+			line-height: 1.2;
+			font-weight: 400;
+
+			@include big-columns {
+				font-size: 48px;
+			}
+		}
+
+		&__features {
+			font-weight: 400;
+
+			@include big-columns {
+				font-size: 22px;
+			}
+
+			.pricing-feature + .pricing-feature {
+				margin-top: 5px;
+
+				@include big-columns {
+					margin-top: 20px;
+				}
+			}
+		}
+
+		&__action {
+			padding-top: 30px;
+		}
+	}
+}
+
+/*-------------------------------------------------------------
+### Parallax Image
+--------------------------------------------------------------*/
+.parallax .elementor-image {
+
+	@include media-breakpoint-up(md) {
+		transform: translate3d(0, var(--ty, 0), 0);
+	}
+}
+
+/*-------------------------------------------------------------
+### Slick
+--------------------------------------------------------------*/
+.slick-slide {
+	outline: 0;
+}

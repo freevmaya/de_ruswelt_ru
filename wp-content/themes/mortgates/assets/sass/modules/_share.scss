@@ -1,0 +1,49 @@
+.share-btns {
+	&__list {
+		position: relative;
+		line-height: 1;
+	}
+	&__items {
+		@include grid-indent(12px);
+	}
+	&__item {
+		display: inline-block;
+		vertical-align: top;
+	}
+	&__link {
+		line-height: 1.5em;
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		font-size: 18px;
+		position: relative;
+		transition: .3s;
+
+		&:before {
+			$size: 35px;
+
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: $size;
+			height: $size;
+			margin: $size/-2 0 0 $size/-2;
+			transition: .3s;
+			border-radius: 50%;
+			transform: scale(.5);
+			z-index: 1;
+			opacity: 0;
+		}
+
+		&:hover:before {
+			transform: scale(1);
+			opacity: 1;
+		}
+
+		i {
+			position: relative;
+			z-index: 2;
+		}
+	}
+}

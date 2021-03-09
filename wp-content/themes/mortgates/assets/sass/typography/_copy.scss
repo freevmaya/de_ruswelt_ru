@@ -1,0 +1,69 @@
+p {
+	margin: 0 0 30px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.only-nbsp {
+		line-height: 1em;
+		margin: 0;
+	}
+}
+
+.dropcaps {
+	font-size: 3.33em;
+	font-weight: 700;
+	float: left;
+	margin: 0 10px 0 0;
+	line-height: 1;
+	position: relative;
+}
+
+dfn, em, i {
+	font-style: italic;
+}
+
+cite {
+	font-style: normal;
+}
+
+address {
+	margin: 0 0 1.4em;
+}
+
+pre {
+	font-family: $font__pre;
+	line-height: $font__line-height-pre;
+	overflow: auto;
+	max-width: 100%;
+	margin: 0 0 1.5em;
+	padding: 1.5em;
+	background: $color__background-pre;
+	border: 1px solid $color__border-pre;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+
+	font-size: 16px;
+}
+
+code, kbd, tt, var {
+	font-family: $font__code;
+	font-size: 16px;
+}
+
+abbr, acronym {
+	cursor: help;
+	border-bottom: 1px dotted;
+	text-decoration: none;
+}
+
+mark, ins {
+	text-decoration: none;
+	padding: 0 2px;
+}
+
+big {
+	font-size: 125%;
+}

@@ -1,0 +1,16 @@
+.site-footer--separate {
+	.footer-area-wrap + .footer-container {
+		.site-info {
+			border-top: 1px solid rgba($color__dark, 0.1);
+		}
+	}
+
+	.footer-area-wrap + .invert.footer-container {
+		.site-info {
+			border-color: rgba($color__white, 0.1);
+		}
+	}
+}
+
+@import "footer/layout-style-1";
+@import "footer/layout-style-2";

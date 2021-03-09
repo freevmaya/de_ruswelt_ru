@@ -1,0 +1,83 @@
+.swiper {
+	&-pagination-bullets &-pagination-bullet {
+		&,
+		.elementor & {
+			width: 11px;
+			height: 11px;
+			opacity: 1;
+			transition: .3s;
+			background-color: transparent;
+			border: 2px solid currentColor;
+			margin: 0 5px;
+
+			&:hover,
+			&-active {
+				background-color: currentColor;
+			}
+		}
+	}
+
+	&-pagination {
+		.post-gallery & {
+			display: none;
+		}
+	}
+
+	&-button-prev:before,
+	&-container &-button-prev:before { content: '\f104' }
+
+	&-button-next:before,
+	&-container &-button-next:before { content: '\f105' }
+
+	&-button-next,
+	&-button-prev,
+	&-container &-button-next,
+	&-container &-button-prev {
+		top: 50%;
+		bottom: auto;
+		transform: translateY(-50%);
+		width: auto;
+		height: auto;
+		font-size: 24px;
+		line-height: 1;
+		margin: 0;
+		background-image: none !important;
+		text-align: center;
+		transition: $bounce;
+		padding: 13px;
+
+		&:hover:not(.swiper-button-disabled) {
+			padding: 18px;
+		}
+
+		&:before {
+			@extend %font-awesome-icon;
+			font-size: 1em;
+			width: 1em;
+			line-height: 1;
+		}
+
+		.post-gallery & {
+			display: none;
+		}
+
+		&.swiper-button-disabled {
+			pointer-events: auto;
+			opacity: 0.5;
+		}
+	}
+
+	&-button-next,
+	&-container &-button-next,
+	&-container.swiper-container-rtl .swiper-button-prev {
+		right: 0;
+		left: auto;
+	}
+
+	&-button-prev,
+	&-container &-button-prev,
+	&-container.swiper-container-rtl .swiper-button-next {
+		left: 0;
+		right: auto;
+	}
+}

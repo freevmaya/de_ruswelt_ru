@@ -1,0 +1,215 @@
+.subscribe-follow {
+	&__custom-bg {
+		padding: 45px 25px;
+
+		.subscribe-block__input {
+			background-color: $color__white;
+		}
+	}
+	&__wrap {
+
+		.subscribe-block__input {
+			background-color: $color__white;
+			border-radius: 0;
+			border-right: none;
+		}
+		.subscribe-block__submit {
+			padding: 16px 30px;
+		}
+
+		.full-width-header-area > .widget-subscribe &,
+		.after-content-full-width-area > .widget-subscribe & {
+			text-align: center;
+
+			.subscribe-block__messages {
+				text-align: left;
+			}
+
+			.follow-block,
+			.subscribe-block {
+				max-width: 650px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+.subscribe-block,
+.follow-block {
+	&__message {
+		font-size: 14px;
+	}
+}
+
+.follow-block {
+	&__message {
+		margin-bottom: 2em;
+	}
+	.subscribe-block + & {
+		margin-top: 35px;
+
+		.social-list:only-child {
+			padding-top: 40px;
+		}
+	}
+}
+.subscribe-block {
+
+	&__form {
+
+		&.processing {
+			pointer-events: none;
+			opacity: 0.7;
+		}
+	}
+
+	&__input-group {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+
+		.elementor & {
+			flex-wrap: nowrap;
+			box-shadow: 0 7px 18px rgba(0,0,0, .06);
+			border-radius: 5px;
+		}
+	}
+	&__input-wrap {
+		position: relative;
+		display: flex;
+		margin: 5px 0;
+		flex: 30 1 170px;
+		min-width: 170px;
+
+		.elementor & {
+			flex: 9 1 50px;
+			min-width: 50px;
+		}
+	}
+	&__input {
+		$_input__font-size: $input__font-size*1.125;
+
+		width: 100%;
+		min-width: 50px;
+		max-width: 100%;
+		font-size: $_input__font-size;
+		padding-top: calc( #{$input__indents_y} - ((#{$_input__font-size} - #{$input__font-size}) * #{$input__line-height})/2 );
+		padding-bottom: calc( #{$input__indents_y} - ((#{$_input__font-size} - #{$input__font-size}) * #{$input__line-height})/2 );
+
+		.elementor & {
+			font-size: $input__font-size;
+			padding-top: $input__indents_y;
+			padding-bottom: $input__indents_y;
+
+			background-color: #fff;
+			&-wrap {
+				margin: 0;
+			}
+		}
+
+		&.error {
+			border-color: $color__not-valid;
+		}
+
+		.elementor .subscribe-block__input-group.layout-1 & {
+			@include border-left-radius(5px);
+			border-right: none;
+		}
+
+		.elementor .subscribe-block__input-group.layout-2 & {
+			@include border-radius(5px);
+		}
+
+		.subscribe-block__input-group.layout-2 & {
+			padding-right: 50px;
+		}
+	}
+	&__submit {
+		margin: 5px 0;
+		flex: 1 0 auto;
+		position: relative;
+
+		.elementor & {
+			margin: 0;
+			padding-top: $input__indents_y;
+			padding-bottom: $input__indents_y;
+			line-height: 2.2;
+		}
+
+		&.btn {
+			padding-left: 14px;
+			padding-right: 14px;
+		}
+
+		&:after {
+			$loader-width: 20px;
+			$border-width: 3px;
+
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: ($loader-width+$border-width)/-2 0 0 ($loader-width+$border-width)/-2;
+			width: $loader-width;
+			height: $loader-width;
+			border-radius: 50%;
+			border: $border-width solid $color__white;
+			border-top-color: transparent;
+			z-index: 1;
+			animation: mortgates_spin 1s linear infinite;
+			opacity: 0;
+		}
+
+		.elementor .subscribe-block__input-group.layout-1 & {
+			@include border-right-radius(5px);
+			font-weight: 700;
+		}
+
+		&.processing {
+			.submit-inner { opacity: 0; }
+			&:after       { opacity: 1; }
+		}
+
+		&--icon {
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			margin-top: 0;
+			margin-bottom: 0;
+			padding: 5px;
+
+			i {
+				font-size: 24px;
+			}
+		}
+	}
+
+	&__message {
+		margin-bottom: 10px;
+	}
+
+	&__error,
+	&__success {
+		margin-top: 5px;
+		font-size: 14px;
+		line-height: 1.5;
+		font-weight: 400;
+		opacity: 1;
+		transition: .3s;
+
+		&.hidden {
+			display: block;
+			opacity: 0;
+			line-height: 0;
+			margin-top: 0;
+		}
+	}
+	&__error{
+		color: $color__not-valid;
+	}
+	&__success {
+		color: $color__valid;
+	}
+}

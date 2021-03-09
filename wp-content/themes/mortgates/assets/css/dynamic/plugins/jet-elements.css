@@ -1,0 +1,402 @@
+.elementor-widget-jet-slider .jet-slider__title {
+    font-family: @font_family( $h1_font_family );
+    font-size: $h1_font_size{px};
+    font-weight: $h1_font_weight;
+    line-height: $h1_line_height;
+    letter-spacing: $h1_letter_spacing{em};
+    color: $regular_h1_color;
+}
+.elementor-widget-jet-slider .jet-slider__subtitle {
+    font-family: @font_family( $h1_font_family );
+    font-size: $h1_font_size{px};
+    font-weight: $h1_font_weight;
+    line-height: $h1_line_height;
+    letter-spacing: $h1_letter_spacing{em};
+    color: $regular_h1_color;
+}
+.invert .elementor-widget-jet-slider .jet-slider__title {
+    color: $invert_h1_color;
+}
+.invert .elementor-widget-jet-slider .jet-slider__subtitle {
+    color: $invert_h1_color;
+}
+
+.elementor-widget-jet-slider .jet-slider__desc {
+    font-family: @font_family( $body_font_family );
+    font-weight: $body_font_weight;
+    letter-spacing: $body_letter_spacing{em};
+    color: $regular_text_color;
+}
+.invert .elementor-widget-jet-slider .jet-slider__desc {
+    color: $invert_text_color;
+}
+
+@media screen and (max-width: 767px) {
+    .invert .elementor-widget-jet-slider .jet-slider__title {
+        font-size: @font_size($h1_font_size, multiple, ceil, 0.6)px;
+    }
+    .elementor-widget-jet-slider .jet-slider__subtitle {
+        font-size: @font_size($h1_font_size, multiple, ceil, 0.6)px;
+    }
+
+    .elementor-widget-jet-slider .jet-slider__desc {
+        font-size: @font_size($h5_font_size, multiple, ceil, 0.7)px;
+    }
+}
+
+.white-text {
+    color: $invert_accent_color_1;
+}
+
+.jet-subscribe-form .jet-subscribe-form__input {
+    background-color: $grey_color_2;
+    border-color: $grey_color_2;
+}
+.jet-subscribe-form .jet-subscribe-form__input:focus {
+    background-color: $grey_color_2;
+    border-color: $regular_accent_color_1;
+}
+
+.jet-images-layout .jet-images-layout__title {
+    font-family: @font_family( $h3_font_family );
+    font-size: $h3_font_size{px};
+    font-weight: $h3_font_weight;
+    line-height: $h3_line_height;
+    letter-spacing: $h3_letter_spacing{em};
+    color: $invert_accent_color_1;
+}
+.jet-images-layout .jet-images-layout__content::after {
+    border-color: $regular_accent_color_1;
+}
+
+.jet-button__label,
+.jet-button__icon {
+    font-family: @font_family( $h6_font_family );
+    font-size: @font_size($h6_font_size, multiple, round, 0.85)px;
+    font-weight: $h5_font_weight;
+    width: auto;
+    height: auto;
+    margin: 0;
+    line-height: 2;
+}
+.jet-button__icon i {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: $h5_font_weight;
+}
+.jet-button__plane {
+    border-radius: 0;
+}
+.jet-button__plane-normal {
+    background-color: $regular_accent_color_1;
+}
+.jet-button__plane-hover {
+    background-color: $regular_accent_color_2;
+}
+.jet-button__state-normal .jet-button__label,
+.jet-button__state-normal .jet-button__icon {
+    color: $invert_text_color;
+}
+.jet-button__state-hover .jet-button__label,
+.jet-button__state-hover .jet-button__icon {
+    color: $invert_text_color;
+}
+
+.jet-slider .jet-slider__button-wrapper .jet-slider__button--primary {
+    background-color: $regular_accent_color_1;
+    color: $invert_text_color;
+}
+.jet-slider .jet-slider__button-wrapper .jet-slider__button--primary:hover {
+    background-color: $regular_accent_color_2;
+    color: $invert_text_color;
+}
+.jet-slider .jet-slider__button-wrapper .jet-slider__button--secondary {
+    color: $invert_text_color;
+    background-color: $regular_accent_color_2;
+}
+.jet-slider .jet-slider__button-wrapper .jet-slider__button--secondary:hover {
+    background-color: $regular_accent_color_1;
+    color: $invert_text_color;
+}
+
+.jet-slider .sp-buttons .sp-button.sp-selected-button {
+    background-color: $regular_accent_color_1;
+    border-color: $regular_accent_color_1;
+}
+.jet-slider .sp-buttons .sp-button {
+    border-color: $regular_accent_color_1;
+}
+.jet-slider .sp-buttons .sp-button:hover {
+    background-color: $regular_accent_color_1;
+}
+.jet-slider .sp-arrow {
+    background-color: $regular_accent_color_1;
+}
+
+.jet-slider .sp-buttons .sp-button:hover {
+    color: $regular_accent_color_1;
+}
+
+.jet-team-member .jet-team-member__name {
+    font-family: @font_family( $h4_font_family );
+    font-size: $h4_font_size{px};
+    font-weight: $h4_font_weight;
+    line-height: $h4_line_height;
+    color: $regular_accent_color_3;
+    letter-spacing: $h4_letter_spacing{em};
+}
+.jet-team-member .jet-team-member__position {
+    font-family: @font_family( $body_font_family );
+    font-size: $body_font_size{px};
+    font-weight: $body_font_weight;
+    line-height: $body_line_height;
+    color: $regular_text_color;
+    letter-spacing: $body_letter_spacing{em};
+}
+.jet-team-member .jet-team-member__desc {
+    font-family: @font_family( $body_font_family );
+    font-size: $body_font_size{px};
+    font-weight: $body_font_weight;
+    line-height: $body_line_height;
+    color: $regular_accent_color_2;
+    letter-spacing: $body_letter_spacing{em};
+}
+.jet-team-member .jet-team-member__socials-icon {
+    font-family: @font_family( $body_font_family );
+    font-size: $body_font_size{px};
+    font-weight: $body_font_weight;
+    line-height: $body_line_height;
+    color: $regular_accent_color_3;
+    letter-spacing: $body_letter_spacing{em};
+}
+.jet-team-member .jet-team-member__socials-icon:hover {
+    color: $regular_accent_color_1;
+}
+
+.elementor-social-icon:hover i {
+    color: $regular_accent_color_1;
+}
+
+.jet-testimonials .jet-testimonials__comment {
+    background-color: $regular_accent_color_1;
+    font-family: @font_family( $body_font_family );
+    font-size: $body_font_size{px};
+    font-weight: $body_font_weight;
+    line-height: $body_line_height;
+    color: $regular_text_color;
+    letter-spacing: $body_letter_spacing{em};
+
+}
+.jet-testimonials .jet-arrow {
+    background-color: $regular_accent_color_1;
+}
+.jet-testimonials .jet-slick-dots li.slick-active span {
+    background-color: $regular_accent_color_1;
+    box-shadow: 0 0 0 3px $regular_accent_color_1;
+}
+.jet-testimonials .jet-slick-dots li:hover span {
+    background-color: $regular_accent_color_1;
+}
+.slick-disabled {
+    opacity: .5;
+}
+.jet-testimonials .jet-testimonials__name {
+    font-family: @font_family( $h6_font_family );
+    font-size: $h6_font_size{px};
+    font-weight: $h6_font_weight;
+    line-height: $h6_line_height;
+    color: $regular_accent_color_2;
+    letter-spacing: $h6_letter_spacing{em};
+}
+.jet-testimonials .jet-testimonials__position {
+    font-family: @font_family( $body_font_family );
+    font-size: $body_font_size{px};
+    font-weight: $body_font_weight;
+    line-height: $body_line_height;
+    color: $regular_text_color;
+    letter-spacing: $body_letter_spacing{em};
+}
+.jet-testimonials .jet-testimonials__date {
+    color: $regular_accent_color_1;
+}
+.jet-testimonials .jet-testimonials__icon i {
+    color: $regular_accent_color_1;
+}
+
+.jet-headline__deco-icon i {
+    color: $regular_accent_color_1;
+}
+.jet-headline__first {
+    color: $regular_accent_color_2;
+}
+.jet-headline__second {
+    color: $regular_accent_color_1;
+}
+.invert .jet-headline__deco-icon i {
+    color: $regular_accent_color_1;
+}
+.invert .jet-headline__first {
+    color: $invert_text_color;
+}
+.invert .jet-headline__second {
+    color: $regular_accent_color_1;
+}
+
+.invert .elementor-counter .elementor-counter-number-wrapper {
+    color: $invert_text_color;
+}
+.invert .elementor-counter .elementor-counter-title {
+    color: $invert_text_color;
+}
+
+.elementor-widget-heading .elementor-heading-title {
+    line-height: $h2_line_height;
+}
+
+.not-found.error-404 .content-404-wrap h1 {
+    font-family: @font_family( $h2_font_family );
+    font-size: $h2_font_size{px};
+    font-weight: $h2_font_weight;
+    line-height: $h2_line_height;
+    letter-spacing: $h2_letter_spacing{em};
+    color: $regular_h2_color;
+}
+
+.jet-posts .entry-title {
+    font-family: @font_family( $h3_font_family );
+    font-size: @font_size($h3_font_size, multiple, round, 0.8)px;
+    font-weight: $h3_font_weight;
+    line-height: $h3_line_height;
+}
+.jet-posts .entry-title a {
+    color: $regular_h4_color;
+}
+.jet-posts .entry-title a:hover {
+    color: $regular_link_hover_color;
+}
+.post-meta__item:not(:first-child):before {
+    background-color: $regular_h5_color;
+}
+.invert .post-meta__item:not(:first-child):before {
+    background-color: $invert_text_color;
+}
+.jet-posts .jet-more {
+    background-color: transparent;
+    padding: 10px;
+    line-height: 2;
+    color: $regular_link_color;
+}
+.jet-posts .jet-more:hover {
+    color: $regular_link_hover_color;
+    background-color: transparent;
+}
+.jet-posts .jet-posts__inner-box {
+    background-color: $invert_accent_color_1;
+}
+
+.jet-mobile-menu-active .jet-menu-container .jet-mobile-menu-toggle-button {
+    box-shadow: 0 0 5px @lighten($regular_accent_color_3, 15);
+}
+
+ul.jet-menu .jet-menu-item .top-level-link,
+ul.jet-menu .jet-menu-item .top-level-link .jet-dropdown-arrow {
+    color: $invert_text_color;
+}
+
+ul.jet-menu .jet-menu-item .top-level-link:hover,
+ul.jet-menu .jet-menu-item .top-level-link:hover .jet-dropdown-arrow,
+ul.jet-menu .jet-menu-item:hover > .top-level-link,
+ul.jet-menu .jet-menu-item:hover > .top-level-link .jet-dropdown-arrow {
+    color: $regular_accent_color_1;
+}
+
+.invert ul.jet-menu .jet-menu-item .top-level-link,
+.invert ul.jet-menu .jet-menu-item .top-level-link .jet-dropdown-arrow {
+    color: $invert_text_color;
+}
+.invert ul.jet-menu .jet-menu-item .top-level-link:hover,
+.invert ul.jet-menu .jet-menu-item .top-level-link:hover .jet-dropdown-arrow,
+.invert ul.jet-menu .jet-menu-item:hover > .top-level-link,
+.invert ul.jet-menu .jet-menu-item:hover > .top-level-link .jet-dropdown-arrow {
+    color: $regular_accent_color_1;
+}
+
+@media screen and (min-width: 767px) {
+    ul.jet-menu .jet-menu-item .top-level-link,
+    ul.jet-menu .jet-menu-item .top-level-link .jet-dropdown-arrow {
+        color: $regular_h5_color;
+    }
+}
+
+.jet-menu li.jet-sub-menu-item.jet-current-menu-item a.sub-level-link {
+    color: $invert_text_color;
+}
+
+.jet-mobile-menu-active .jet-menu-container.jet-mobile-menu {
+    background-color: $regular_link_hover_color;
+}
+
+.jet-custom-nav .jet-menu-link-text,
+.jet-custom-nav__sub .jet-custom-nav__item a .jet-menu-link-text,
+.jet-sub-menu .jet-menu-title {
+    font-weight: $h6_font_weight;
+}
+
+.jet-menu a {
+    color: $regular_h5_color;
+}
+.jet-menu a:hover {
+    color: $regular_link_hover_color;
+}
+.jet-menu .elementor-widget-heading .elementor-heading-title > a {
+    color: $regular_h5_color;
+}
+.jet-menu .elementor-widget-heading .elementor-heading-title > a:hover {
+    color: $regular_link_hover_color;
+}
+.jet-menu .elementor-widget-heading .elementor-heading-title {
+    color: $regular_h5_color;
+    font-weight: $body_font_weight;
+}
+
+.team.type-team .team-position .team-meta_item.position::before,
+.decorate .elementor-widget-container .elementor-heading-title::before,
+.decorate .elementor-widget-container .elementor-heading-title::after {
+    background-color: $grey_color_2;
+}
+.invert .team.type-team .team-position .team-meta_item.position::before,
+.invert .decorate .elementor-widget-container .elementor-heading-title::before,
+.invert .decorate .elementor-widget-container .elementor-heading-title::after,
+.invert.decorate .elementor-widget-container .elementor-heading-title::before,
+.invert.decorate .elementor-widget-container .elementor-heading-title::after {
+    background-color: @alpha($grey_color_2, 20);
+}
+.decorate-darker .elementor-widget-container .elementor-heading-title::before,
+.decorate-darker .elementor-widget-container .elementor-heading-title::after {
+    background-color: @darken($invert_accent_color_1, 8);
+}
+
+.services-macros {
+    font-family: @font_family( $h5_font_family );
+    font-size: $h5_font_size{px};
+    font-weight: $h5_font_weight;
+    line-height: $h5_line_height;
+    letter-spacing: $h5_letter_spacing{em};
+    color: $regular_h5_color;
+    text-transform: $h5_text_transform;
+}
+
+.jet-posts .post-thumbnail__link:after {
+    background-image: linear-gradient(to bottom, @alpha($regular_accent_color_1, 50), @alpha($regular_accent_color_2, 30));
+}
+
+.color {
+    color: $regular_accent_color_1;
+}
+
+#tribe-bar-form .tribe-bar-submit input[type=submit],
+#tribe-events .tribe-events-button {
+    font-family: @font_family( $h6_font_family ) !important;
+    font-weight: $h6_font_weight !important;
+    letter-spacing: 1.8px;
+}

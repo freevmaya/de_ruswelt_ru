@@ -1,0 +1,99 @@
+.cherry-popup-wrapper .cherry-popup-close-button span {
+	color: $regular_text_color;
+}
+.cherry-popup-wrapper .cherry-popup-close-button:hover span {
+	color: $regular_accent_color_1;
+}
+@media (min-width: 768px) {
+	.cherry-popup-wrapper .cherry-popup-close-button span,
+	.cherry-popup-wrapper.popup-type-default .cherry-popup-close-button span{
+		color: $invert_accent_color_1;
+		background-color: $regular_accent_color_1;
+	}
+	.cherry-popup-wrapper .cherry-popup-close-button:hover span,
+	.cherry-popup-wrapper.popup-type-default .cherry-popup-close-button:hover span{
+		color: $regular_accent_color_1;
+		background-color: $invert_accent_color_1;
+	}
+}
+.cherry-popup-wrapper .cherry-popup-title h4 {
+	color: $regular_h4_color;
+}
+
+.cherry-popup-wrapper input[type='text'],
+.cherry-popup-wrapper input[type='email'],
+.cherry-popup-wrapper input[type='url'],
+.cherry-popup-wrapper input[type='password'],
+.cherry-popup-wrapper input[type='search'],
+.cherry-popup-wrapper input[type='number'],
+.cherry-popup-wrapper input[type='tel'] {
+	background-color: $grey_color_1;
+	border-color: $grey_color_1;
+	font-style: $body_font_style;
+	font-weight: $body_font_weight;
+	font-family: @font_family( $body_font_family );
+	color: $regular_text_color;
+}
+
+.cherry-popup-wrapper input[type='text']:focus,
+.cherry-popup-wrapper input[type='email']:focus,
+.cherry-popup-wrapper input[type='url']:focus,
+.cherry-popup-wrapper input[type='password']:focus,
+.cherry-popup-wrapper input[type='search']:focus,
+.cherry-popup-wrapper input[type='number']:focus,
+.cherry-popup-wrapper input[type='tel']:focus {
+	border-color: $regular_accent_color_1;
+}
+
+.cherry-popup-wrapper .cherry-popup-check .marker {
+	background-color: $grey_color_1;
+	border-color: @darken($grey_color_1, 10);
+}
+.cherry-popup-wrapper .cherry-popup-check.checked .marker{
+	background-color: $regular_accent_color_1;
+	border-color: $regular_accent_color_1;
+}
+
+.popup-type-login .cherry-popup-login__login-in,
+.popup-type-signup .cherry-popup-register__sign-up,
+.popup-type-default .cherry-popup-subscribe__submit,
+.popup-type-subscribe .cherry-popup-subscribe__submit,
+.cherry-popup .wp-social-login-widget .wp-social-login-provider-list .wp-social-login-provider {
+	font-family: @font_family( $meta_font_family );
+}
+
+.popup-type-login .cherry-popup-login__login-in,
+.popup-type-signup .cherry-popup-register__sign-up,
+.popup-type-default .cherry-popup-subscribe__submit,
+.popup-type-subscribe .cherry-popup-subscribe__submit {
+	color: $invert_accent_color_1;
+	background-color: $regular_accent_color_1;
+}
+.popup-type-login .cherry-popup-login__login-in:hover,
+.popup-type-signup .cherry-popup-register__sign-up:hover,
+.popup-type-login .cherry-popup-login__login-in:active,
+.popup-type-signup .cherry-popup-register__sign-up:active {
+	color: $invert_accent_color_1;
+	background-color: @darken($regular_accent_color_1, 10);
+}
+
+.cherry-popup-signup__login-user a,
+.cherry-popup-login__signup-message a {
+	color: $regular_link_hover_color;
+}
+
+.cherry-popup-signup__login-user a:hover,
+.cherry-popup-login__signup-message a:hover {
+	color: $regular_link_color;
+}
+
+.wp-social-login-provider-list a {
+	color: $regular_accent_color_1;
+}
+.wp-social-login-provider-list a:hover {
+	color: @darken($regular_accent_color_1, 20);
+}
+
+.comments-area .wp-social-login-provider-list a::after {
+	background-color: $grey_color_3;
+}

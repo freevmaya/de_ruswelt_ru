@@ -1,0 +1,9 @@
+.subscribe-block__form .subscribe-block__submit--icon {
+	color: $regular_text_color;
+}
+.subscribe-block__form .subscribe-block__submit--icon:hover {
+	color: $regular_accent_color_1;
+}
+.invert .footer-area .social-list .social-list__items .menu-item > a:hover {
+	color: $regular_accent_color_1;
+}

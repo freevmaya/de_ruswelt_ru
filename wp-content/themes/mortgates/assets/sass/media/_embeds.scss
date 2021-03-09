@@ -1,0 +1,120 @@
+.embed-responsive {
+	position: relative;
+	display: block;
+	padding: 0;
+
+	.embed-responsive-item,
+	iframe,
+	embed,
+	object {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		border: 0;
+	}
+
+	// Modifier class for 16:9 aspect ratio
+	&.embed-responsive-16by9 {
+		padding-bottom: $embed__ratio;
+	}
+
+	// Modifier class for 4:3 aspect ratio
+	&.embed-responsive-4by3 {
+		padding-bottom: 75%;
+	}
+}
+
+/* Audio */
+.wp-playlist.wp-audio-playlist {
+	padding: 20px;
+
+	.wp-playlist-current-item {
+		margin-bottom: 15px;
+	}
+	.wp-playlist-tracks {
+		margin-top: 15px;
+	}
+}
+.wp-playlist.wp-audio-playlist.wp-playlist-light {
+	.wp-playlist-item {
+		&.wp-playlist-playing .wp-playlist-caption {
+			color: $color__dark;
+		}
+	}
+}
+
+/* mejs-video */
+.mejs-video {
+	.mejs-poster {
+		background-size: cover;
+	}
+
+	.mejs-overlay-button {
+		$size: 86px;
+
+		width: $size;
+		height: $size;
+		margin-top: $size/-2;
+		background-image: none;
+		text-align: center;
+		position: relative;
+		&:before {
+			content: '\f04b';
+			@extend %font-awesome-icon;
+			font-size: 32px;
+			line-height: $size;
+			z-index: 2;
+			position: relative;
+			color: $color__white;
+			text-indent: 5px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			@include border-radius(50%);
+			background-color: rgba(0,0,0,0.25);
+			transition: $bounce;
+		}
+	}
+
+	.mejs-overlay:hover {
+		.mejs-overlay-button:after {
+			transform: scale(1.2) translate3d(0,0,0);
+		}
+	}
+}
+
+.mejs-audio-container-wrapper,
+.wp-video,
+.wp-playlist.wp-video-playlist,
+.wp-playlist.wp-audio-playlist {
+	.entry-content & {
+		&:not(:first-child) {
+			margin-top: 35px;
+		}
+		&:not(:last-child) {
+			margin-bottom: 35px;
+		}
+
+		&:first-child {
+			margin-top: 15px;
+		}
+	}
+}
+
+/* Facebook embed */
+.fb_iframe_widget {
+	max-width: 100%;
+	> span {
+		max-width: 100%;
+	}
+}

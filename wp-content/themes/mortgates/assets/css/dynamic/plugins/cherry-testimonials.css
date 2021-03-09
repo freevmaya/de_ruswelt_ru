@@ -1,0 +1,51 @@
+.tm-testi__title-sup,
+.tm-testi__title-sub {
+	font-style: $h6_font_style;
+	font-weight: $h6_font_weight;
+	font-size: $h6_font_size{px};
+	line-height: $h6_line_height;
+	font-family: @font_family( $h6_font_family );
+	letter-spacing: $h6_letter_spacing{em};
+	text-transform: $h6_text_transform;
+	color: $regular_h6_color;
+}
+
+.tm-testi__title-main {
+	font-style: $h2_font_style;
+	font-weight: $h2_font_weight;
+	font-size: @font_size($h2_font_size, multiple, round, $h2_mobile_multiple)px;
+	line-height: $h2_line_height;
+	font-family: @font_family( $h2_font_family );
+	letter-spacing: $h2_letter_spacing{em};
+	text-transform: $h2_text_transform;
+	color: $regular_h2_color;
+}
+
+@media (min-width: 1200px) {
+	.tm-testi__title-main {
+		font-size: $h2_font_size{px};
+	}
+}
+
+.tm-testi .tm-testi__divider {
+	background-color: @darken($grey_color_1, 13);
+}
+
+.tm-testi blockquote {
+	font-weight: $body_font_weight;
+	font-family: @font_family( $body_font_family );
+}
+
+.tm-testi--boxed .tm-testi__inner,
+.tm-testi--speech-bubble .tm-testi__item-body {
+	background-color: $grey_color_1;
+}
+
+.tm-testi--boxed .tm-testi__item:after,
+.tm-testi--speech-bubble .tm-testi__item:after {
+	border-top-color: $grey_color_1;
+}
+
+.tm-testi--speech-bubble .tm-testi__item-body:after {
+	border-top-color: $grey_color_1;
+}

@@ -1,0 +1,53 @@
+/* #Fields */
+input,
+select,
+textarea {
+	font-style: $body_font_style;
+	font-family: @font_family( $body_font_family );
+	background-color: $grey_color_1;
+	color: $regular_text_color;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	border-color: $regular_accent_color_1;
+}
+
+/* #WPCF7 */
+.wpcf7 input[type='text'],
+.wpcf7 input[type='email'],
+.wpcf7 input[type='url'],
+.wpcf7 input[type='password'],
+.wpcf7 input[type='search'],
+.wpcf7 input[type='tel'],
+.wpcf7 textarea {
+	border-bottom-color: @darken($grey_color_1, 22.75);
+}
+
+.wpcf7 input[type='text']:focus,
+.wpcf7 input[type='email']:focus,
+.wpcf7 input[type='url']:focus,
+.wpcf7 input[type='password']:focus,
+.wpcf7 input[type='search']:focus,
+.wpcf7 input[type='tel']:focus,
+.wpcf7 textarea:focus {
+	border-bottom-color: $regular_accent_color_1;
+}
+
+input::placeholder,
+select,
+textarea::placeholder {
+	color: @alpha($regular_text_color, 50);
+}
+
+form input[type="button"],
+form input[type="submit"] {
+	font-family: @font_family( $h6_font_family );
+	font-size: $h6_font_size{px};
+	font-weight: $h6_font_weight;
+	line-height: $h6_line_height;
+	letter-spacing: $h6_letter_spacing{em};
+	color: $regular_h6_color;
+	text-transform: $h6_text_transform;
+}

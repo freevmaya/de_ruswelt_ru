@@ -1,0 +1,10 @@
+/* #Contact-information*/
+.contact-information-widget .icon {
+	color: $regular_accent_color_1;
+}
+.invert .footer-area .contact-information-widget__inner li a {
+	color: $invert_accent_color_1;
+}
+.invert .footer-area .contact-information-widget__inner li a:hover {
+	color: $regular_accent_color_1;
+}

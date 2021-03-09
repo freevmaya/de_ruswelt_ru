@@ -1,0 +1,52 @@
+.site-header.style-2 {
+
+	.site-branding {
+		text-align: center;
+	}
+
+	.header-btn-wrapper {
+		margin-top: 20px;
+		text-align: center;
+
+		@include media-breakpoint-up(md) {
+			margin-top: 0;
+			text-align: right;
+		}
+	}
+
+	.header-nav-wrapper {
+		margin-top: 20px;
+
+		@include media-breakpoint-up(md) {
+			margin-top: 10px;
+
+			&.header-components-visible {
+
+				.main-navigation {
+					flex: 0 0 calc(100% - 220px);
+					max-width: calc(100% - 220px);
+					margin-left: 110px;
+				}
+
+				.header-components {
+					flex: 0 0 80px;
+					max-width: 80px;
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+
+	.main-navigation {
+		@include media-breakpoint-up(md) {
+
+			.menu {
+				justify-content: center;
+			}
+
+			.jet-menu {
+				justify-content: center!important;
+			}
+		}
+	}
+}

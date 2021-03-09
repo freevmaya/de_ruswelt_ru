@@ -1,0 +1,100 @@
+@import "variables";
+
+/*--------------------------------------------------------------
+## Card
+--------------------------------------------------------------*/
+.card {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+### Grid layout
+--------------------------------------------------------------*/
+@include media-breakpoint-up(md) {
+	.card-deck {
+		display: flex;
+		margin-right: -$card-grid-gutter / 2;
+		margin-left: -$card-grid-gutter / 2;
+		flex-flow: row wrap;
+		.card {
+			margin-right: $card-grid-gutter / 2;
+			margin-left: $card-grid-gutter / 2;
+
+			max-width: calc(100% / 2 - #{$card-grid-gutter});
+			width: calc(100% / 2 - #{$card-grid-gutter});
+			flex: 0 0 calc(100% / 2 - #{$card-grid-gutter});
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.posts-list {
+		@for $i from 3 through 4 {
+			&--grid-#{$i}-cols {
+				.card {
+					max-width: calc(100% / #{$i} - #{$card-grid-gutter});
+					width: calc(100% / #{$i} - #{$card-grid-gutter});
+					flex: 0 0 calc(100% / #{$i} - #{$card-grid-gutter});
+				}
+
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+### Masonry layout
+--------------------------------------------------------------*/
+@include media-breakpoint-up(md) {
+	.card-columns {
+		column-gap: $card-grid-gutter;
+		column-count: 2;
+		.card {
+			display: inline-block;
+			width: 100%; // Don't let them exceed the column width
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	@for $i from 3 through 4 {
+		.posts-list--masonry-#{$i}-cols {
+			column-count: #{$i};
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+### Vertical Justify layout
+--------------------------------------------------------------*/
+@include media-breakpoint-up(md) {
+	.posts-list--vertical-justify {
+		display: flex;
+		margin-right: -$card-grid-gutter / 2;
+		margin-left: -$card-grid-gutter / 2;
+		flex-flow: row wrap;
+		.card {
+			flex: 0 0 calc(100% / 2 - #{$card-grid-gutter});
+			width: calc(100% / 2 - #{$card-grid-gutter});
+			max-width: calc(100% / 2 - #{$card-grid-gutter});
+			margin-right: $card-grid-gutter / 2;
+			margin-left: $card-grid-gutter / 2;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.posts-list--vertical-justify {
+		.card {
+			flex: 0 0 calc(100% / 3 - #{$card-grid-gutter});
+			width: calc(100% / 3 - #{$card-grid-gutter});
+			max-width: calc(100% / 3 - #{$card-grid-gutter});
+			&:nth-child(7n + 2),
+			&:nth-child(7n + 3) {
+				flex: 0 0 calc(100% / 1.5 - #{$card-grid-gutter});
+				width: calc(100% / 1.5 - #{$card-grid-gutter});
+				max-width: calc(100% / 1.5 - #{$card-grid-gutter});
+			}
+		}
+	}
+}

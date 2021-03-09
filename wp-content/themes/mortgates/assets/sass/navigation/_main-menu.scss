@@ -1,0 +1,409 @@
+/* Basic */
+.main-navigation {
+	display: block;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+
+	ul {
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		text-align: left;
+		margin-top: 0;
+	}
+
+	a {
+		position: relative;
+		display: block;
+		text-decoration: none;
+	}
+
+	@include media-breakpoint-down(sm) {
+
+		.menu {
+			ul {
+				a {
+					padding-left: 2rem;
+				}
+				ul {
+					a {
+						padding-left: 3rem;
+					}
+					ul {
+						a {
+							padding-left: 4rem;
+						}
+						ul {
+							a {
+								padding-left: 5rem;
+							}
+							ul {
+								a {
+									padding-left: 6rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+
+		// Menu toggle
+		.menu-toggle {
+			display: none;
+		}
+
+		.menu {
+			display: flex;
+			flex-wrap: wrap;
+
+			> li {
+				display: flex;
+
+				> a { text-align: center; }
+			}
+		}
+
+		// sub-menu
+		.menu {
+			.sub-menu {
+				position: absolute;
+				z-index: 999;
+				left: -999em;
+
+				opacity: 0;
+				visibility: hidden;
+				transition-duration: 0ms;
+				transition-timing-function: linear;
+				transition-property: opacity, visibility;
+
+				background-color: $color__white;
+			}
+
+			li {
+				&:hover {
+					& > ul {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+
+			// level 1
+			> li {
+				& > ul {
+					top: 100%;
+				}
+
+				&:hover {
+					& > ul {
+						left: 0;
+					}
+				}
+			}
+
+			// level 2,3,....,n
+			li {
+				li {
+					& > ul {
+						top: 0;
+					}
+
+					&:hover{
+						& > ul {
+							left: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Skin */
+.main-navigation {
+	.menu {
+
+		a {
+			padding: 15px 20px;
+			font-size: 14px;
+			line-height: 1.5;
+
+			&::after {
+				/* Marker style */
+				@extend %font-awesome-icon;
+				cursor: pointer;
+				position: absolute;
+
+				font-size: 12px;
+				line-height: 1;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+
+			@include grid-indent(15px, margin, '>li');
+
+			> li {
+
+				> a {
+					padding: 10px 0;
+					font-size: 12px;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+				}
+
+				&.menu-item-has-children {
+					> a {
+						padding-right: 15px;
+						&::after {
+							/* Marker (level 1) */
+							content: '\f0d7';
+							right: 0;
+							top: 13px;
+						}
+					}
+				}
+
+				&:hover,
+				&.current_page_item,
+				&.current_page_ancestor,
+				&.current-menu-item,
+				&.current-menu-ancestor {
+					> a {
+						/* Active and hover state (level 1) */
+						.invert & {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sub-menu {
+		@include media-breakpoint-up(md) {
+
+			box-shadow: $box__shadow_3;
+
+			li {
+				&.menu-item-has-children {
+					> a {
+						&:after {
+							/* Marker (level 2, 3, ..., N) */
+							content: '\f0da';
+							right: 18px;
+							top: 21px;
+						}
+					}
+				}
+
+				border-top: 1px solid;
+
+				&:first-child {
+					border: none;
+				}
+			}
+
+			> li > a {
+				width: 240px;
+				padding: 15px 30px;
+			}
+
+			a { font-size: 14px; }
+
+			li:hover,
+			li.current_page_item,
+			li.current_page_ancestor,
+			li.current-menu-item,
+			li.current-menu-ancestor {
+				> a {
+					/* Active and hover state (level 2, 3, ..., N) */
+				}
+			}
+		}
+	}
+}
+
+/* Menu items description */
+.menu-item__desc {
+	font-size: 12px;
+	line-height: 1.3;
+	@include media-breakpoint-up(md) {
+		.menu > li > a > & {
+			text-align: center;
+		}
+	}
+}
+
+/* Mobile menu */
+.main-navigation {
+	@include media-breakpoint-down(sm) {
+
+		.menu {
+			position: absolute;
+			z-index: 100;
+			top: calc(100% + 15px);
+			left: 0;
+			right: 0;
+			transition: .15s;
+			overflow-y: scroll;
+			transform: scaleY(0);
+			transform-origin: top center;
+			max-height: 300px;
+			background-color: $color__white;
+			box-shadow: $box__shadow_3;
+			display: block;
+
+			li {
+				border-top: 1px solid;
+			}
+
+			> li:first-child {
+				border: none;
+			}
+		}
+
+		&.toggled {
+			.menu {
+				transform: scaleY(1);
+			}
+		}
+	}
+}
+
+/* Jet Menu */
+.jet-desktop-menu-active,
+.jet-mobile-menu-active {
+	.menu-toggle {
+		display: none;
+	}
+}
+
+.jet-menu-container,
+.jet-menu {
+	position: static;
+}
+
+ul.jet-menu {
+	@include media-breakpoint-up(md) {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+}
+
+.jet-menu {
+	width: auto;
+
+	.top-level-link {
+		font-size: 16px;
+		line-height: 1.5;
+		letter-spacing: 0.25px;
+		font-weight: 700;
+	}
+
+	>.jet-menu-item > a {
+		padding: 10px 15px;
+	}
+
+	.invert & {
+		@include media-breakpoint-up(md) {
+			>.jet-menu-hover >a,
+			>.jet-current-menu-item >a {
+
+				.jet-menu-title {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+.jet-dropdown-arrow {
+	font-size: 12px;
+}
+
+.jet-menu-item-desc {
+	font-size: 12px;
+	line-height: 1.3;
+}
+
+.jet-menu .jet-sub-menu {
+	@include media-breakpoint-up(md) {
+		margin-top: 10px;
+	}
+}
+
+.jet-sub-menu {
+	@include media-breakpoint-up(md) {
+		box-shadow: $box__shadow_3;
+	}
+
+	>li>a {
+		padding: 15px 30px;
+		font-size: 14px;
+		line-height: 1.5;
+		border-bottom: 1px solid;
+	}
+
+	>li:last-child > a {
+		border-width: 0;
+	}
+}
+
+.jet-sub-mega-menu {
+	@include media-breakpoint-up(md) {
+		margin-top: 10px;
+		box-shadow: $box__shadow_3;
+	}
+}
+
+.jet-menu--animation-type-fade .jet-sub-menu.right-side {
+	@include media-breakpoint-up(md) {
+		top: 100%;
+	}
+}
+
+.jet-custom-nav {
+	.jet-custom-nav__item {
+		margin-bottom: 0;
+		>a {
+			background-color: transparent;
+			padding: 15px 30px;
+			font-size: 14px;
+			line-height: 1.5;
+			transition-duration: 0.1s;
+		}
+	}
+
+	.jet-menu-link-text {
+		color: inherit;
+	}
+}
+
+.jet-custom-nav__sub .jet-custom-nav__item a .jet-menu-link-text,
+.jet-custom-nav__sub .jet-custom-nav__item.hover-state a .jet-menu-link-text {
+	color: inherit;
+}
+
+body.jet-menu-template-default.single-jet-menu {
+	background-color: #ffffff;
+}
+
+.jet-mobile-menu-toggle-button {
+	left: -35px;
+	outline: 0;
+	
+	.jet-menu-toggle__icon {
+		font-size: 20px;
+		vertical-align:  baseline;
+	}
+}

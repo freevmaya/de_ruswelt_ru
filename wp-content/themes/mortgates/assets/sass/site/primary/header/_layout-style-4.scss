@@ -1,0 +1,31 @@
+.site-header.style-4 {
+
+	.header-btn-wrapper {
+		order: 2;
+
+		@include media-breakpoint-up(xl) {
+			order: 5;
+		}
+	}
+
+	.header-nav-wrapper {
+		@include media-breakpoint-up(md) {
+			margin-top: 10px;
+		}
+		@include media-breakpoint-up(xl) {
+			margin-top: 0;
+		}
+	}
+
+	.main-navigation {
+		@include media-breakpoint-up(xl) {
+			.menu {
+				justify-content: center;
+			}
+
+			.jet-menu {
+				justify-content: center !important;
+			}
+		}
+	}
+}

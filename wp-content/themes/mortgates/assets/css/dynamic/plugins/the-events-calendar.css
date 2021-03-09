@@ -1,0 +1,184 @@
+#tribe-bar-form,
+#tribe-events #tribe-bar-views.tribe-bar-views-open .tribe-bar-views-list {
+	background-color: $grey_color_1;
+}
+
+#tribe-events #tribe-bar-form label,
+#tribe-events #tribe-bar-collapse-toggle {
+	font-style: $h5_font_style;
+	font-weight: $h5_font_weight;
+	font-size: $h5_font_size{px};
+	line-height: $h5_line_height;
+	font-family: @font_family( $h5_font_family );
+	letter-spacing: $h5_letter_spacing{em};
+	text-transform: $h5_text_transform;
+	color: $regular_h5_color;
+}
+
+#tribe-events #tribe-bar-form input[type=text]:focus {
+	border-color: $regular_accent_color_1;
+}
+
+#tribe-bar-form .tribe-bar-submit input[type=submit],
+#tribe-events .tribe-events-button{
+	font-family: @font_family( $meta_font_family );
+	background-color: $regular_accent_color_1;
+	border-color: $regular_accent_color_1;
+}
+
+#tribe-bar-form .tribe-bar-submit input[type=submit]:hover,
+#tribe-events .tribe-events-button:hover{
+	border-color: @darken($regular_accent_color_1, 10);
+	background-color: @darken($regular_accent_color_1, 10);
+}
+
+#tribe-events #tribe-bar-dates:before,
+#tribe-events .tribe-bar-views-list span[class*="tribe-icon"]:before,
+#tribe-events #tribe-bar-views .tribe-bar-views-list a:hover,
+#tribe-events #tribe-events-content .tribe-events-tooltip h4,
+#tribe-events #tribe-events-content .tribe-events-calendar td.tribe-events-has-events.mobile-active:after {
+	color: $regular_accent_color_1;
+}
+
+#tribe-events #tribe-bar-views .tribe-bar-views-list * {
+	font-size: $body_font_size{px};
+}
+
+#tribe-events .tribe-bar-views-list span[class*="tribe-icon"]:before {
+	line-height: calc($body_font_size{px} * 1.2);
+}
+
+#tribe-events #tribe-bar-form.tribe-bar-collapse #tribe-bar-views {
+	border-color: $grey_color_1;
+}
+
+#tribe-events ul.tribe-events-sub-nav a {
+	font-style: $h4_font_style;
+	font-weight: $h4_font_weight;
+	font-size: @font_size($h4_font_size, multiple, round, 0.8)px;
+	line-height: $h4_line_height;
+	font-family: @font_family( $h4_font_family );
+	letter-spacing: $h4_letter_spacing{em};
+	text-transform: $h4_text_transform;
+	color: $regular_h4_color;
+}
+
+#tribe-events ul.tribe-events-sub-nav a:before {
+	color: @darken($grey_color_1, 13);
+}
+
+#tribe-events ul.tribe-events-sub-nav a:hover {
+	color: $regular_accent_color_1;
+}
+
+#tribe-events #tribe-geo-results h2.tribe-events-page-title,
+#tribe-events h2.tribe-events-page-title {
+	font-weight: $h2_font_weight;
+	font-size: @font_size($h2_font_size, multiple, round, $h2_mobile_multiple)px;
+}
+
+@media (min-width: 1200px) {
+	#tribe-events #tribe-geo-results h2.tribe-events-page-title,
+	#tribe-events h2.tribe-events-page-title { font-size: $h2_font_size{px}; }
+}
+
+#tribe-events .tribe-events-calendar thead th,
+#tribe-events #tribe-events-content .tribe-events-calendar td,
+#tribe-events #tribe-events-content .tribe-events-calendar td.tribe-events-othermonth{
+	background-color: $grey_color_1;
+}
+
+#tribe-events .tribe-events-calendar thead th:nth-last-child(-n + 2),
+#tribe-events #tribe-events-content .tribe-events-calendar td:nth-last-child(-n + 2){
+	background-color: @lighten($grey_color_1, 1.5);
+}
+
+#tribe-events #tribe-events-content .tribe-events-calendar td.tribe-events-othermonth div[id*=tribe-events-daynum-] {
+	color: $regular_link_color;
+}
+
+#tribe-events #tribe-events-content .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-] {
+	background-color: $regular_accent_color_1;
+	color: $invert_accent_color_1;
+}
+
+#tribe-events #tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
+	background-color: $regular_accent_color_2;
+}
+
+#tribe-events #tribe-events-content .tribe-events-tooltip h4 {
+	font-weight: $h4_font_weight;
+	text-transform: $h4_text_transform;
+}
+
+#tribe-events .tribe-event-duration,
+#tribe-events #tribe-mobile-container .tribe-events-event-schedule-details,
+#tribe-events .tribe-events-loop .tribe-events-event-meta {
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-size: $meta_font_size{px};
+	line-height: $meta_line_height;
+	font-family: @font_family( $meta_font_family );
+	letter-spacing: $meta_letter_spacing{em};
+	text-transform: $meta_text_transform;
+	color: $regular_link_color;
+}
+
+#tribe-events .tribe-events-read-more {
+	font-family: @font_family( $meta_font_family );
+}
+
+#tribe-events #tribe-mobile-container .type-tribe_events~.type-tribe_events,
+#tribe-events .tribe-events-list-separator-month:after,
+#tribe-events .events-list #tribe-events-footer,
+#tribe-events .single-tribe_events #tribe-events-footer,
+#tribe-events .tribe-events-day #tribe-events-footer,
+#tribe-events .tribe-events-map #tribe-events-footer,
+#tribe-events .tribe-events-photo #tribe-events-footer {
+	border-color: @darken($grey_color_1, 5.5);
+}
+
+#tribe-events .tribe-events-list .tribe-events-loop .tribe-event-featured a:active,
+#tribe-events .tribe-events-list .tribe-events-loop .tribe-event-featured a:hover {
+	color: $regular_accent_color_1;
+}
+
+#tribe-events .tribe-events-list .tribe-events-list-event-title,
+.single-tribe_events #tribe-events .tribe-events-single-event-title{
+	font-size: @font_size($h3_font_size, multiple, round, $h3_mobile_multiple)px;
+	line-height: $h3_line_height;
+	letter-spacing: $h3_letter_spacing{em};
+	text-transform: $h3_text_transform;
+}
+
+@media (min-width: 1200px) {
+	#tribe-events .tribe-events-list .tribe-events-list-event-title,
+	.single-tribe_events #tribe-events .tribe-events-single-event-title{ font-size: $h3_font_size{px}; }
+}
+
+#tribe-events .tribe-events-list .tribe-events-loop .tribe-event-featured,
+#tribe-events .tribe-events-list #tribe-events-day.tribe-events-loop .tribe-event-featured,
+.single-tribe_events .tribe-events-event-meta {
+	background-color: $grey_color_1;
+}
+
+#tribe-events .tribe-events-day .tribe-events-day-time-slot h5,
+.widget.tribe-events-list-widget .tribe-event-featured {
+	background-color: $regular_accent_color_1;
+}
+
+.tribe-events-list .tribe-events-event-cost span,
+#tribe-events .tribe-events-schedule .tribe-events-cost {
+	border-color: $regular_accent_color_1;
+}
+
+#tribe-events .tribe-events-meta-group .tribe-events-single-section-title {
+	font-style: $h4_font_style;
+	font-weight: $h4_font_weight;
+	font-size: $h4_font_size{px};
+	line-height: $h4_line_height;
+	font-family: @font_family( $h4_font_family );
+	letter-spacing: $h4_letter_spacing{em};
+	text-transform: $h4_text_transform;
+	color: $regular_h4_color;
+}

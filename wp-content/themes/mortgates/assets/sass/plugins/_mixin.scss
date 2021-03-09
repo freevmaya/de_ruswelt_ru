@@ -1,0 +1,56 @@
+@mixin cherry-filters {
+	@extend %cherry-filters-list;
+
+	.position-fullwidth .elementor-col-100 &,
+	.position-fullwidth [data-col="100"] & {
+		@extend %cherry-filters-list--mod;
+	}
+
+	&_item {
+		@extend %cherry-filters-item;
+	}
+
+	&_link {
+		@extend %cherry-filters-link;
+	}
+}
+
+%cherry-filters-list {
+	margin-bottom: 50px;
+	text-align: center;
+	padding: 20px 0;
+	position: relative;
+	margin-left: -10px;
+	margin-right: -10px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 10px;
+		width: calc(100% - 20px);
+	}
+}
+
+%cherry-filters-list--mod {
+	margin-left: -20px;
+	margin-right: -20px;
+
+	&:before {
+		width: 100vw;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+%cherry-filters-item {
+	padding: 5px 20px;
+	margin: 0;
+	position: relative;
+}
+
+%cherry-filters-link {
+	border: none;
+	padding: 0;
+}

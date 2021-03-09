@@ -1,0 +1,8 @@
+<wpml-config>
+	<custom-fields>
+		<custom-field action="copy">cherry_trend_views</custom-field>
+		<custom-field action="copy">cherry_trend_rating_rate</custom-field>
+		<custom-field action="copy">cherry_trend_rating_total</custom-field>
+		<custom-field action="copy">cherry_trend_rating_votes</custom-field>
+	</custom-fields>
+</wpml-config>

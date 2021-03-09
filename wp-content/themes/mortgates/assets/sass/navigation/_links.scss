@@ -1,0 +1,39 @@
+a {
+	transition: 0s linear;
+
+	&,
+	&:hover,
+	&:active {
+		text-decoration: none;
+	}
+
+	h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+		color: inherit;
+	}
+
+	.site-main p & {
+
+		font-weight: 400;
+
+		&.btn {
+			font-weight: 700;
+		}
+
+		&[href*="callto:"],
+		&[href*="tel:"],
+		&[href*="mailto:"] {
+			font-weight: inherit;
+		}
+	}
+
+	.site-main p & em,
+	.site-main p em & {
+		text-decoration: underline;
+	}
+}
+
+.edit-link {
+	display: block;
+	background: $color__background-pre;
+	padding: 0 15px;
+}

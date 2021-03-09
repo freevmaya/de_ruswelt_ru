@@ -1,0 +1,30 @@
+.site-info {
+	font-size: .857rem;
+	line-height: 1.75;
+	.social-list {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		a {
+			height: 41px;
+			width: 41px;
+			border-radius: 50%;
+			position: relative;
+			margin: 22px 6px 10px;
+			&:before {
+				font-size: 16px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+	.footer-copyright a {
+		margin-left: 12px;
+		padding-left: 12px;
+		border-left: 1px solid #fff;
+	}
+}
+
+@import "footer/layout-style-1";
+@import "footer/layout-style-2";

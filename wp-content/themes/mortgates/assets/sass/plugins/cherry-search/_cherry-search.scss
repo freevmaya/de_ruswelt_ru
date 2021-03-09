@@ -1,0 +1,49 @@
+.cherry-search {
+
+	.site-header & {
+		position: static;
+	}
+
+	& &__results-list {
+		margin-top: -5px;
+
+		.site-header & {
+			margin-top: 5px;
+		}
+	}
+
+	& &__results-item,
+	& &__more-button {
+		margin-top: 0;
+	}
+
+	& &__results-item{
+
+		&:first-child {
+			.site-header & {
+				border-top: 1px solid;
+			}
+		}
+
+		&,
+		&:hover{
+			a {
+				color: inherit;
+			}
+		}
+	}
+
+	& &__title,
+	& &__more-button{
+		font-size: 16px;
+	}
+
+	& &__spinner {
+		opacity: 1;
+	}
+
+	& &__message {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}

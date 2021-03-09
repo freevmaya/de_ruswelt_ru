@@ -1,0 +1,43 @@
+.site-footer.style-1 {
+
+	.site-info {
+		text-align: center;
+		font-size: 14px;
+		line-height: 1.7;
+
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@include media-breakpoint-up(md) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		&-wrap {
+			> * {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+
+		.social-list {
+			margin-top: 35px;
+		}
+
+		@include media-breakpoint-up(md) {
+			text-align: left;
+
+			&-wrap {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				@include grid-indent(15px, margin);
+			}
+
+			.social-list {
+				margin-top: 10px;
+				flex-shrink: 0;
+			}
+		}
+	}
+}

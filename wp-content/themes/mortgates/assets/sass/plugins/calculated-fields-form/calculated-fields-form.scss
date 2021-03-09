@@ -1,0 +1,74 @@
+#fbuilder {
+  .top_aligned .fields label {
+    margin-bottom: 4px;
+    display: inline-block;
+  }
+  .cff-container-field {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .cff-button-field {
+    margin-top: 23px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    span.uh {
+      position: relative;
+      line-height: 1.375;
+      margin-top: 1px;
+      margin-top: 25px;
+      padding-left: 36px;
+      @include media-breakpoint-up(lg) {
+        flex-basis: 68%;
+        margin-top: 0;
+        padding-left: 0;
+      }
+      &::before {
+        content: "\F2FD";
+        font-family: "Material Design Icons";
+        font-size: 22px;
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 0px;
+        @include media-breakpoint-up(lg) {
+          left: -30px;
+        }
+      }
+    }
+  }
+  .pbreak {
+    .fields,
+    .fform {
+      padding: 6px 0;
+    }
+  }
+  .fields {
+    .fields {
+      padding: 10px 20px;
+      .r {
+        font-size: 0;
+      }
+    }
+    input,
+    select,
+    textarea {
+      padding: 13.5px 24px;
+      min-height: 56px;
+    }
+  }
+  input[type="button"],
+  input[type="submit"] {
+    padding: 13.5px 31.5px;
+    letter-spacing: 1.8px;
+    margin-right: 6.1%;
+  }
+  .cff-dropdown-field .dfield {
+    select {
+      background-image: url(assets/images/dropdown-arrow.png);
+      background-repeat: no-repeat;
+      background-position: right 24px center;
+      appearance: none;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+$top-panel-gutter: 15px;
+
+.top-panel {
+	&__inner {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		@include media-breakpoint-up(md) {
+			padding-top: 9px;
+			padding-bottom: 9px;
+		}
+
+		.site-header--separate & {
+			border-bottom: 1px solid;
+		}
+
+		.site-header--separate .invert & {
+			border-color: rgba($color__white, 0.1);
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column nowrap;
+		@include grid-indent($top-panel-gutter);
+
+		@include media-breakpoint-up(md) {
+			flex-flow: row wrap;
+			justify-content: space-between;
+		}
+
+		> * + * {
+			margin-top: 10px;
+			@include media-breakpoint-up(md) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__wrap-items {
+		&:only-child {
+			flex-grow: 1;
+		}
+	}
+
+	&__menus {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		@include grid-indent($top-panel-gutter);
+
+		@include media-breakpoint-up(md) {
+			flex-flow: row wrap;
+		}
+
+		> * + * {
+			margin-top: 10px;
+			@include media-breakpoint-up(md) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__message {
+		font-size: 12px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: center;
+		@include media-breakpoint-up(md) {
+			text-align: left;
+		}
+
+		& + .contact-block {
+			@include media-breakpoint-up(md) {
+				order: 5;
+				width: 100%;
+			}
+		}
+	}
+}

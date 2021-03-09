@@ -1,0 +1,73 @@
+$star-color: #c6c6c6;
+$accent-star-color: #fcb903;
+
+.cherry-trend-stars {
+	vertical-align: middle;
+}
+.cherry-trend-star {
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+	color: $star-color;
+	vertical-align: baseline;
+
+	&--active {
+		&,
+		& ~ .cherry-trend-star {
+			color: $accent-star-color;
+		}
+	}
+}
+
+.cherry-trend-views{
+	vertical-align: baseline;
+	&__count {
+		&::before {
+			font-size: 1em;
+		}
+	}
+}
+
+.cherry-trend-post{
+	@include card;
+
+	&:not(:last-child) {
+		margin-bottom: 30px;
+	}
+
+	&__media {
+		position: relative;
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__meta-tags {
+		@extend %tags-style-2-position;
+
+		a {
+			@extend %tags-style-2;
+		}
+	}
+
+	&__content-wrapper{
+		padding: 30px 20px;
+	}
+
+	&__content-wrapper,
+	&__media {
+		margin-bottom: 0;
+	}
+
+	&__title {
+		margin-bottom: 5px;
+	}
+
+	.cherry-trend-rating,
+	&__btn {
+		margin-top: 15px;
+	}
+}
+
+

@@ -1,0 +1,31 @@
+#toTop {
+	$size: 60px;
+
+	display: none;
+	border-radius: 5px;
+	text-decoration: none;
+	position: fixed;
+	bottom: 70px;
+	overflow: hidden;
+	width: $size;
+	height: $size;
+	z-index: 999;
+	text-align: center;
+	box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+	&:before{
+		width: 100%;
+		line-height: $size;
+		font-size: 28px;
+		content: "\F143";
+		font-family: "Material Design Icons";
+	}
+	&:focus {
+		outline: 0;
+	}
+	@include media-breakpoint-down(sm) {
+		right: -999em !important;
+	}
+	@include media-breakpoint-up(md) {
+		right: 0;
+	}
+}

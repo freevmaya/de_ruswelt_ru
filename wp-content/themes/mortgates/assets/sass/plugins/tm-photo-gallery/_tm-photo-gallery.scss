@@ -1,0 +1,234 @@
+.tm-pg_front_gallery {
+	padding: 0;
+
+	ul.tm-pg_front_gallery-tabs {
+		border-bottom: none;
+		margin-top: 0;
+		margin-bottom: 0;
+
+		@extend %cherry-filters-list;
+
+		.position-fullwidth .elementor-col-100 &,
+		.position-fullwidth [data-col="100"] & {
+			@extend %cherry-filters-list--mod;
+		}
+
+		li {
+			@extend %cherry-filters-item;
+
+			a {
+				@extend %cherry-filters-link;
+				font-size: inherit;
+				font-weight: inherit;
+			}
+
+			&.active,
+			&:hover {
+				a {
+					&:after {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+
+	.filter-select {
+		margin: 20px auto;
+		display: block;
+		max-width: 210px;
+
+		&__list {
+			margin-left: 0;
+		}
+	}
+
+	.tm-pg_front_gallery-navigation,
+	.load-more-button {
+		margin: 40px 0 10px;
+	}
+
+	.load-more-button .btn {
+		@include btn;
+	}
+}
+
+
+.tm-pg_front_gallery {
+	.tm-pg_front_gallery-masonry,
+	.tm-pg_front_gallery-grid,
+	.tm-pg_front_gallery-justify {
+
+		.tm_pg_gallery-item_link {
+			img {
+				object-fit: cover;
+				height: 100%;
+
+				.ie & {
+					font-family: 'object-fit: cover';
+				}
+			}
+		}
+
+		.tm_pg_gallery-item_icon {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 38px;
+			height: 38px;
+			margin: 30px 30px 0 0;
+			background-repeat: no-repeat;
+			background-position: 7px 5px;
+			border-radius: 50%;
+			background-size: 24px 24px;
+		}
+
+		.tm_pg_gallery-item_title {
+			font-size: 30px;
+			color: inherit;
+			margin: 0;
+		}
+
+		.tm_pg_gallery-item_description {
+			margin: 10px 0 0;
+			font-size: 14px;
+			&:empty {
+				margin: 0;
+			}
+		}
+
+		.tm_pg_gallery-item_counter {
+			margin-top: 10px;
+			color: inherit;
+		}
+
+		.tm_pg_gallery-item_label {
+			padding: 3px 10px;
+			font-size: 14px;
+			line-height: 1.5;
+			top: 15px;
+			left: 15px;
+		}
+
+		.tm_pg_gallery-item_show-more {
+			margin-bottom: 0;
+		}
+
+		&.tm-pg_hover-custom {
+			$transition-time: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+			.tm_pg_gallery-item_link {
+
+				&:before {
+					top: 100%;
+					bottom: 0;
+					display: block;
+					height: auto;
+					transition: .3s $transition-time;
+					transition-delay: .25s;
+				}
+
+				img {
+					transition: .4s $transition-time;
+					transform: scale(1.1);
+				}
+
+				.tm_pg_gallery-item_meta {
+					> * {
+						transform: translateY(300%);
+						transition: .3s $transition-time;
+						opacity: 0;
+					}
+
+					> *:nth-child(1) {
+						transition-delay: 0.2s;
+					}
+					> *:nth-child(2) {
+						transition-delay: 0.15s;
+					}
+					> *:nth-child(3) {
+						transition-delay: 0.1s;
+					}
+					> *:nth-child(4) {
+						transition-delay: 0.05s;
+					}
+				}
+
+				&:hover {
+
+					&:before {
+						top: 0;
+						transition: .3s cubic-bezier(0.780, 0.030, 0.000, 1.000);
+						transition-delay: 0s;
+					}
+
+					img {
+						transition: .4s cubic-bezier(0.780, 0.030, 0.000, 1.000);
+						transform: scale(1.1) translate3d(0, -4%, 0);
+					}
+
+					.tm_pg_gallery-item_meta {
+						> * {
+							transform: translateY(0);
+							transition: .45s cubic-bezier(0.640, 0.280, 0.280, 1.185);
+							opacity: 1;
+						}
+
+						> *:nth-child(1) {
+							transition-delay: 0.1s;
+						}
+						> *:nth-child(2) {
+							transition-delay: 0.15s;
+						}
+						> *:nth-child(3) {
+							transition-delay: 0.2s;
+						}
+						> *:nth-child(4) {
+							transition-delay: 0.25s;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.tm-pg_front_gallery-justify,
+	.tm-pg_front_gallery-grid {
+		.tm_pg_gallery-item-wrapper,
+		.tm_pg_gallery-item-wrapper a {
+			height: 100%;
+		}
+	}
+}
+
+.single-tm_pg_album,
+.single-tm_pg_set {
+	.site-content_wrap.container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.site-content_wrap {
+		margin-bottom: 0;
+	}
+}
+
+.single .tm_pg_album,
+.single .tm_pg_set {
+	.entry-title {
+		text-align: center;
+		padding-left: $grid-gutter-width/2;
+		padding-right: $grid-gutter-width/2;
+		margin-bottom: 20px;
+	}
+}
+
+
+/*--------------------------------------------------------------
+# PopUp
+--------------------------------------------------------------*/
+.lg-outer {
+	&.lg-thumb-open .lg-img-wrap {
+		max-height: calc(100% - 90px);
+	}
+}

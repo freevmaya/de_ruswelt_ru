@@ -1,0 +1,160 @@
+/* #Widget Calendar */
+.invert .widget_calendar {
+	color: $regular_text_color;
+}
+.widget_calendar .calendar_wrap {
+	background-color: $grey_color_1;
+}
+
+.widget_calendar tbody tr:nth-child(odd) {
+	background-color: @lighten($grey_color_1, 1.55);
+}
+
+.widget_calendar caption,
+.widget_calendar tfoot a:before {
+	color: $regular_accent_color_1;
+}
+
+.widget_calendar tfoot a:hover:before {
+	color: $regular_text_color;
+}
+
+.widget_calendar tbody td#today,
+.widget_calendar tbody td a {
+	color: $invert_text_color;
+}
+
+.widget_calendar tbody td#today,
+.widget_calendar tbody td a {
+	background-color: $regular_accent_color_1;
+}
+
+.widget_calendar tbody td a:hover {
+	background-color: $regular_accent_color_2;
+	color: $invert_text_color;
+}
+
+/* #Widget Tag Cloud */
+.tagcloud a {
+	border-color: $grey_color_1;
+}
+
+.tagcloud a:hover {
+	color: $invert_text_color;
+	border-color: $regular_accent_color_2;
+	background-color: $regular_accent_color_2;
+}
+
+.invert .tagcloud a:hover {
+	color: $regular_text_color;
+	border-color: $invert_text_color;
+	background-color: $invert_text_color;
+}
+
+/* #Widget Recent Posts - Comments*/
+.widget_recent_entries a:not(:hover),
+.widget_recent_comments a:not(:hover) {
+	color: $regular_text_color;
+}
+
+.invert .widget_recent_entries a:not(:hover),
+.invert .widget_recent_comments a:not(:hover) {
+	color: $invert_text_color;
+}
+
+/* #Widget Archive - Categories */
+.widget_archive label:before,
+.widget_categories label:before{
+	color: @darken($grey_color_1, 13);
+}
+
+.widget_archive ul li,
+.widget_categories ul li{
+	color: $regular_accent_color_1;
+}
+
+/* #Widgets Nav-menu - Meta - Pages */
+.footer-area .widget_nav_menu a {
+	color: $regular_link_hover_color;
+}
+
+.footer-area .widget_nav_menu a:hover {
+	color: $regular_link_color;
+}
+
+.invert .footer-area .widget_nav_menu a {
+	color: $invert_link_color;
+}
+
+.invert .footer-area .widget_nav_menu a:hover {
+	color: $invert_link_hover_color;
+}
+
+/* #Widget RSS */
+.widget_rss a.rsswidget {
+	font-style: $h4_font_style;
+	font-weight: $h4_font_weight;
+	font-family: @font_family( $h4_font_family );
+	letter-spacing: $h4_letter_spacing{em};
+	text-transform: $h4_text_transform;
+	color: $regular_h4_color;
+}
+.widget_rss a.rsswidget:hover {
+	color: $regular_link_hover_color;
+}
+
+.invert .widget_rss a.rsswidget {
+	color: $invert_h4_color;
+}
+.invert .widget_rss a.rsswidget:hover {
+	color: $invert_link_hover_color;
+}
+
+/* #Widget date style*/
+.rss-date,
+.widget_recent_entries .post-date{
+	font-style: $meta_font_style;
+	font-weight: $meta_font_weight;
+	font-size: $meta_font_size{px};
+	line-height: $meta_line_height;
+	font-family: @font_family( $meta_font_family );
+	letter-spacing: $meta_letter_spacing{em};
+	color: $regular_link_color;
+}
+
+.invert .rss-date,
+.invert .widget_recent_entries .post-date{
+	color: $invert_link_color;
+}
+
+/* Widgets misc */
+.widget_archive > ul,
+.widget_categories > ul,
+.widget-area:not(.footer-area) .widget_nav_menu div > ul,
+.elementor-widget-sidebar .widget_nav_menu div > ul,
+.widget_meta > ul,
+.widget_pages > ul,
+.widget_recent_entries a,
+.widget_recent_comments a{
+	font-style: $h6_font_style;
+	font-weight: $h6_font_weight;
+	font-family: @font_family( $h6_font_family );
+}
+
+.widget_archive > ul > li > a:before,
+.widget_categories > ul > li > a:before,
+.widget-area:not(.footer-area) .widget_nav_menu div > ul > li > a:before,
+.elementor-widget-sidebar .widget_nav_menu div > ul > li > a:before,
+.widget_meta > ul > li > a:before,
+.widget_pages > ul > li > a:before {
+	background-color: @darken($grey_color_1, 26);
+}
+
+.widget_archive > ul > li + li,
+.widget_categories > ul > li + li,
+.widget-area:not(.footer-area) .widget_nav_menu div > ul > li + li,
+.elementor-widget-sidebar .widget_nav_menu div > ul > li + li,
+.widget_meta > ul > li + li,
+.widget_pages > ul > li + li {
+	border-color: @darken($grey_color_1, 5.5);
+}

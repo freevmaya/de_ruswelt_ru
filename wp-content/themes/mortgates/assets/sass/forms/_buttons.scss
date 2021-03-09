@@ -1,0 +1,89 @@
+// General styles
+%btn {
+	line-height: 2;
+	display: inline-block;
+	max-width: 100%;
+	padding: $button__indents;
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	overflow: hidden;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transition: .1s;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	letter-spacing: 1.7px;
+	border-width: 0;
+	@include border-radius();
+
+	&,
+	&:hover {
+		text-decoration: none;
+	}
+	&:focus {
+		outline: 0;
+	}
+}
+
+@mixin btn {
+	@extend %btn;
+}
+
+%btn-xs {
+	font-size: 10px;
+	padding: $button__indents_y*0.4666667 $button__indents_x*0.425;
+}
+
+%btn-sm {
+	font-weight: 400;
+	padding: $button__indents_y*0.633333 $button__indents_x*0.5;
+	border-radius: 0;
+}
+
+.btn,
+form button,
+form input[type='button'],
+form input[type='reset'],
+form input[type='submit'] {
+	@include btn;
+
+	&.btn-fullwidth {
+		width: 100%;
+	}
+	&.btn-xs {
+		@extend %btn-xs;
+	}
+	&.btn-sm {
+		@extend %btn-sm;
+	}
+
+	&.header-btn {
+		background-color: transparent;
+	}
+
+	i { margin-left: 5px; }
+}
+
+.link,
+.btn-link {
+	font-size: 12px;
+	display: inline-block;
+	line-height: 1.5;
+	font-weight: 400;
+	text-transform: uppercase;
+
+	i { margin-left: 5px; }
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.btn.header-btn {
+	padding: 15px 35px;
+	border-style: solid;
+	border-width: 1px;
+}

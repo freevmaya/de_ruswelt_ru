@@ -1,0 +1,10 @@
+.widget-banner {
+	&__img,
+	&__link {
+		display: inline-block;
+	}
+
+	&__link {
+		&:hover{}
+	}
+}

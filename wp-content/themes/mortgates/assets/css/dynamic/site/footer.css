@@ -1,0 +1,10 @@
+/* #Footer */
+.site-footer {
+	background-color: $footer_bg;
+}
+.footer-area-wrap {
+	background-color: $footer_widgets_bg;
+}
+.footer-area .widget-title {
+	font-size: $body_font_size{px};
+}

@@ -1,0 +1,62 @@
+.custom-posts {
+	&__holder {}
+
+	&__item {
+		&:not(:last-child){
+			padding-bottom: 20px;
+			@include media-breakpoint-up(md) {
+				padding-bottom: 35px;
+			}
+
+			@include sidebars-area(){
+				padding-bottom: 20px;
+			}
+		}
+	}
+
+	.post-inner {
+		@include clearfix-full();
+	}
+
+	.post-thumbnail {
+		float: left;
+		margin-right: 25px;
+		max-width: calc(33.33% - 12.5px);
+
+		@include media-breakpoint-up(sm) {
+			max-width: calc(50% - 12.5px);
+		}
+	}
+	.post-content-wrap {}
+
+	.entry {
+		&-title {
+			font-size: 16px;
+			line-height: 1.125;
+			@include media-breakpoint-up(lg) {
+				font-size: 24px;
+				line-height: 1.25;
+			}
+
+			@include sidebars-area(){
+				font-size: 16px;
+				line-height: 1.125;
+			}
+		}
+		&-meta,
+		&-content > * {
+			margin-top: 5px;
+		}
+
+		&-content {
+			font-size: 16px;
+			overflow: hidden;
+		}
+
+		&-footer {
+			> * {
+				margin-top: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+/* #Button Appearance Styles */
+.btn,
+.btn-link,
+.link,
+.elementor-widget .elementor-button,
+.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span,
+a.button,
+form button,
+form input[type='button'],
+form input[type='reset'],
+form input[type='submit'] {
+	font-family: @font_family( $h5_font_family );
+}
+
+.btn,
+.btn-primary,
+.invert .btn-primary,
+.elementor-widget .elementor-button,
+.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span,
+.tm-pg_front_gallery .load-more-button .btn,
+form button,
+form input[type='button'],
+form input[type='submit']{
+	color: $invert_accent_color_1;
+	background-color: $regular_accent_color_1;
+	border-color: $grey_color_4;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.invert .btn-primary:hover,
+.btn-primary.processing,
+.invert .btn-primary.processing,
+.elementor-widget .elementor-button:hover,
+.cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span:hover,
+.tm-pg_front_gallery .load-more-button .btn:hover,
+form button:hover,
+form input[type='button']:hover,
+form input[type='submit']:hover{
+	color: $invert_accent_color_1;
+	border-color: @darken($regular_accent_color_1, 10);
+	background-color: @darken($regular_accent_color_1, 10);
+}
+
+.invert .btn:hover,
+.invert .btn-primary:hover,
+.invert .invert .btn-primary:hover,
+.invert .btn-primary.processing,
+.invert .invert .btn-primary.processing,
+.invert .elementor-widget .elementor-button:hover,
+.invert .cherry-projects-wrapper .projects-ajax-button-wrapper .projects-ajax-button span:hover,
+.invert .tm-pg_front_gallery .load-more-button .btn:hover,
+.invert form button:hover,
+.invert form input[type='button']:hover,
+.invert form input[type='submit']:hover{
+	color: $invert_accent_color_1;
+	border-color: @darken($regular_accent_color_1, 10);
+	background-color: @darken($regular_accent_color_1, 10);
+}
+
+.btn-secondary,
+.invert .btn-secondary,
+form input[type="reset"]{
+	color: $invert_accent_color_1;
+	background-color: $regular_accent_color_2;
+	border-color: $regular_accent_color_2;
+}
+.btn-secondary:hover,
+.invert .btn-secondary:hover,
+.btn-secondary.processing,
+.invert .btn-secondary.processing,
+form input[type="reset"]:hover {
+	color: $invert_accent_color_1;
+	background-color: $regular_accent_color_1;
+	border-color: $regular_accent_color_1;
+}
+
+.btn-grey,
+.invert .btn-grey {
+	color: $regular_text_color;
+	background-color: $grey_color_1;
+	border-color: $grey_color_1;
+}
+.btn-grey:hover,
+.invert .btn-grey:hover,
+.btn-grey.processing,
+.invert .btn-grey.processing{
+	color: $regular_text_color;
+	background-color: @darken($grey_color_1, 10%);
+	border-color: @darken($grey_color_1, 10%);
+}
+
+.btn.header-btn {
+	color: $regular_text_color;
+}
+.invert .btn.header-btn {
+	color: $invert_text_color;
+}
+
+.btn.header-btn:hover {
+	color: $invert_accent_color_1;
+}
