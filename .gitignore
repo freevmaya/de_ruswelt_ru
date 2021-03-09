@@ -1,0 +1,17 @@
+# phpstorm project files
+.idea
+# windows thumbnail cache
+Thumbs.db
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.zip
+*.rar
+wp-config.php
